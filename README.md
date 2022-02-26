@@ -1,4 +1,7 @@
-# asd
+# DragBuilder
+
+```
+Built with Vue 3, Tailwind CSS, Hero Icons
 
 ## Project setup
 ```
