@@ -1,7 +1,4 @@
-import React from "react"
-
-function FeatureA() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -72,7 +69,4 @@ function FeatureA() {
         fill="var(--solid-900)"
       />
     </svg>
-  )
-}
-
-export default FeatureA;
+</template>

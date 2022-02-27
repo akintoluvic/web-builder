@@ -1,7 +1,4 @@
-import React from "react"
-
-function FeatureC() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <circle cx={140} cy={26} r={6} fill="var(--main-200)" />
@@ -63,7 +60,4 @@ function FeatureC() {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
-
-export default FeatureC;
+</template>

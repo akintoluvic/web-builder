@@ -27,14 +27,14 @@ import EcommerceA from './ecommerce/EcommerceA';
 import EcommerceB from './ecommerce/EcommerceB';
 import EcommerceC from './ecommerce/EcommerceC';
 
-// import FeatureA from './feature/a';
-// import FeatureB from './feature/b';
-// import FeatureC from './feature/c';
-// import FeatureD from './feature/d';
-// import FeatureE from './feature/e';
-// import FeatureF from './feature/f';
-// import FeatureG from './feature/g';
-// import FeatureH from './feature/h';
+import FeatureA from './feature/FeatureA';
+import FeatureB from './feature/FeatureB';
+import FeatureC from './feature/FeatureC';
+import FeatureD from './feature/FeatureD';
+import FeatureE from './feature/FeatureE';
+import FeatureF from './feature/FeatureF';
+import FeatureG from './feature/FeatureG';
+import FeatureH from './feature/FeatureH';
 
 // import FooterA from './footer/a';
 // import FooterB from './footer/b';
@@ -112,16 +112,16 @@ export default function getIcons() {
       EcommerceB: <EcommerceB />,
       EcommerceC: <EcommerceC />
     },
-    // Feature: {
-    //   FeatureA: <FeatureA />,
-    //   FeatureB: <FeatureB />,
-    //   FeatureC: <FeatureC />,
-    //   FeatureD: <FeatureD />,
-    //   FeatureE: <FeatureE />,
-    //   FeatureF: <FeatureF />,
-    //   FeatureG: <FeatureG />,
-    //   FeatureH: <FeatureH />
-    // },
+    Feature: {
+      FeatureA: <FeatureA />,
+      FeatureB: <FeatureB />,
+      FeatureC: <FeatureC />,
+      FeatureD: <FeatureD />,
+      FeatureE: <FeatureE />,
+      FeatureF: <FeatureF />,
+      FeatureG: <FeatureG />,
+      FeatureH: <FeatureH />
+    },
     // eslint-disable-next-line no-irregular-whitespace
     // Footer: {
     //   FooterA: <FooterA />,
