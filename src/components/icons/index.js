@@ -5,18 +5,18 @@ import BlogC from './blog/BlogC';
 import BlogD from './blog/BlogD';
 import BlogE from './blog/BlogE';
 
-// import ContactA from './contact/a';
-// import ContactB from './contact/b';
-// import ContactC from './contact/c';
+import ContactA from './contact/ContactA';
+import ContactB from './contact/ContactB';
+import ContactC from './contact/ContactC';
 
-// import ContentA from './content/a';
-// import ContentB from './content/b';
-// import ContentC from './content/c';
-// import ContentD from './content/d';
-// import ContentE from './content/e';
-// import ContentF from './content/f';
-// import ContentG from './content/g';
-// import ContentH from './content/h';
+// import ContentA from './content/ContentA';
+// import ContentB from './content/ContentB';
+// import ContentC from './content/ContentC';
+// import ContentD from './content/ContentD';
+// import ContentE from './content/ContentE';
+// import ContentF from './content/ContentF';
+// import ContentG from './content/ContentG';
+// import ContentH from './content/ContentH';
 
 // import CTAA from './cta/a';
 // import CTAB from './cta/b';
@@ -86,11 +86,11 @@ export default function getIcons() {
       BlogD: <BlogD />,
       BlogE: <BlogE />
     },
-    // Contact: {
-    //   ContactA: <ContactA />,
-    //   ContactB: <ContactB />,
-    //   ContactC: <ContactC />
-    // },
+    Contact: {
+      ContactA: <ContactA />,
+      ContactB: <ContactB />,
+      ContactC: <ContactC />
+    },
     // Content: {
     //   ContentA: <ContentA />,
     //   ContentB: <ContentB />,

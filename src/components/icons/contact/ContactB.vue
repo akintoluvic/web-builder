@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContactB() {
-  return (
+<template>
     <svg fill="none" viewBox="0 0 266 150">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -116,7 +113,4 @@ function ContactB() {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
-
-export default ContactB;
+</template>

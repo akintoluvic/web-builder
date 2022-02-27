@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContactC() {
-  return (
+<template>
     <svg fill="none" viewBox="0 0 266 150">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -54,7 +51,4 @@ function ContactC() {
       />
       <rect x={85} y={41} width={97} height={4} rx={2} fill="var(--base-500)" />
     </svg>
-  )
-}
-
-export default ContactC;
+</template>
