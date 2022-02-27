@@ -1,16 +1,13 @@
-import React from "react"
-
-function CTAA() {
-  return (
+<template>
     <svg fill="none" viewBox="0 0 266 150">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
         x={20}
         y={68}
-        width={119}
+        width={26}
         height={5}
         rx={2.5}
-        fill="var(--solid-900)"
+        fill="var(--main-500)"
       />
       <rect
         x={20}
@@ -26,10 +23,15 @@ function CTAA() {
         width={40}
         height={10}
         rx={2}
-        fill="var(--main-500)"
+        fill="var(--base-400)"
+      />
+      <rect
+        x={160}
+        y={70}
+        width={40}
+        height={10}
+        rx={2}
+        fill="var(--base-400)"
       />
     </svg>
-  )
-}
-
-export default CTAA;
+</template>

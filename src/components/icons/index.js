@@ -18,10 +18,10 @@ import ContentF from './content/ContentF';
 import ContentG from './content/ContentG';
 import ContentH from './content/ContentH';
 
-// import CTAA from './cta/a';
-// import CTAB from './cta/b';
-// import CTAC from './cta/c';
-// import CTAD from './cta/d';
+import CTAA from './cta/CTAA';
+import CTAB from './cta/CTAB';
+import CTAC from './cta/CTAC';
+import CTAD from './cta/CTAD';
 
 // import EcommerceA from './ecommerce/a';
 // import EcommerceB from './ecommerce/b';
@@ -101,12 +101,12 @@ export default function getIcons() {
       ContentG: <ContentG />,
       ContentH: <ContentH />
     },
-    // CTA: {
-    //   CTAA: <CTAA />,
-    //   CTAB: <CTAB />,
-    //   CTAC: <CTAC />,
-    //   CTAD: <CTAD />
-    // },
+    CTA: {
+      CTAA: <CTAA />,
+      CTAB: <CTAB />,
+      CTAC: <CTAC />,
+      CTAD: <CTAD />
+    },
     // Ecommerce: {
     //   EcommerceA: <EcommerceA />,
     //   EcommerceB: <EcommerceB />,

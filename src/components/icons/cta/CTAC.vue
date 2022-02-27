@@ -1,7 +1,4 @@
-import React from "react"
-
-function CTAC() {
-  return (
+<template>
     <svg fill="none" viewBox="0 0 266 150">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -46,7 +43,4 @@ function CTAC() {
         fill="var(--base-400)"
       />
     </svg>
-  )
-}
-
-export default CTAC
+</template>
