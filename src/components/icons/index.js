@@ -23,9 +23,9 @@ import CTAB from './cta/CTAB';
 import CTAC from './cta/CTAC';
 import CTAD from './cta/CTAD';
 
-// import EcommerceA from './ecommerce/a';
-// import EcommerceB from './ecommerce/b';
-// import EcommerceC from './ecommerce/c';
+import EcommerceA from './ecommerce/EcommerceA';
+import EcommerceB from './ecommerce/EcommerceB';
+import EcommerceC from './ecommerce/EcommerceC';
 
 // import FeatureA from './feature/a';
 // import FeatureB from './feature/b';
@@ -107,11 +107,11 @@ export default function getIcons() {
       CTAC: <CTAC />,
       CTAD: <CTAD />
     },
-    // Ecommerce: {
-    //   EcommerceA: <EcommerceA />,
-    //   EcommerceB: <EcommerceB />,
-    //   EcommerceC: <EcommerceC />
-    // },
+    Ecommerce: {
+      EcommerceA: <EcommerceA />,
+      EcommerceB: <EcommerceB />,
+      EcommerceC: <EcommerceC />
+    },
     // Feature: {
     //   FeatureA: <FeatureA />,
     //   FeatureB: <FeatureB />,

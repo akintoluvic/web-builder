@@ -1,7 +1,4 @@
-import React from "react"
-
-function EcommerceC() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -73,7 +70,4 @@ function EcommerceC() {
       />
       <circle cx={128} cy={114} r={5} fill="var(--base-300)" />
     </svg>
-  )
-}
-
-export default EcommerceC;
+</template>

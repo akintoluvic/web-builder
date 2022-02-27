@@ -1,7 +1,4 @@
-import React from "react"
-
-function EcommerceB() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <path
@@ -81,7 +78,4 @@ function EcommerceB() {
         fill="var(--base-500)"
       />
     </svg>
-  )
-}
-
-export default EcommerceB;
+</template>
