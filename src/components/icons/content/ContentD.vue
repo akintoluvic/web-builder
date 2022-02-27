@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContentD() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -100,7 +97,4 @@ function ContentD() {
         fill="var(--base-400)"
       />
     </svg>
-  )
-}
-
-export default ContentD;
+</template>

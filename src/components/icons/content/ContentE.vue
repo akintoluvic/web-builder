@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContentE() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <path
@@ -41,7 +38,4 @@ function ContentE() {
         fill="var(--main-500)"
       />
     </svg>
-  )
-}
-
-export default ContentE;
+</template>

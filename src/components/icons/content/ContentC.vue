@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContentC() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
@@ -171,7 +168,4 @@ function ContentC() {
       />
       <circle cx={184} cy={89} r={4} fill="var(--main-200)" />
     </svg>
-  )
-}
-
-export default ContentC;
+</template>

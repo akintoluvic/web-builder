@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContentH() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <path
@@ -98,7 +95,4 @@ function ContentH() {
         fill="var(--base-500)"
       />
     </svg>
-  )
-}
-
-export default ContentH;
+</template>

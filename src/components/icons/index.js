@@ -9,14 +9,14 @@ import ContactA from './contact/ContactA';
 import ContactB from './contact/ContactB';
 import ContactC from './contact/ContactC';
 
-// import ContentA from './content/ContentA';
-// import ContentB from './content/ContentB';
-// import ContentC from './content/ContentC';
-// import ContentD from './content/ContentD';
-// import ContentE from './content/ContentE';
-// import ContentF from './content/ContentF';
-// import ContentG from './content/ContentG';
-// import ContentH from './content/ContentH';
+import ContentA from './content/ContentA';
+import ContentB from './content/ContentB';
+import ContentC from './content/ContentC';
+import ContentD from './content/ContentD';
+import ContentE from './content/ContentE';
+import ContentF from './content/ContentF';
+import ContentG from './content/ContentG';
+import ContentH from './content/ContentH';
 
 // import CTAA from './cta/a';
 // import CTAB from './cta/b';
@@ -91,16 +91,16 @@ export default function getIcons() {
       ContactB: <ContactB />,
       ContactC: <ContactC />
     },
-    // Content: {
-    //   ContentA: <ContentA />,
-    //   ContentB: <ContentB />,
-    //   ContentC: <ContentC />,
-    //   ContentD: <ContentD />,
-    //   ContentE: <ContentE />,
-    //   ContentF: <ContentF />,
-    //   ContentG: <ContentG />,
-    //   ContentH: <ContentH />
-    // },
+    Content: {
+      ContentA: <ContentA />,
+      ContentB: <ContentB />,
+      ContentC: <ContentC />,
+      ContentD: <ContentD />,
+      ContentE: <ContentE />,
+      ContentF: <ContentF />,
+      ContentG: <ContentG />,
+      ContentH: <ContentH />
+    },
     // CTA: {
     //   CTAA: <CTAA />,
     //   CTAB: <CTAB />,

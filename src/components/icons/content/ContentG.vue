@@ -1,7 +1,4 @@
-import React from "react"
-
-function ContentG() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <path
@@ -67,7 +64,4 @@ function ContentG() {
         fill="var(--solid-900)"
       />
     </svg>
-  )
-}
-
-export default ContentG;
+</template>
