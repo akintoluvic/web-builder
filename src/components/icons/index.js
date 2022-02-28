@@ -70,9 +70,9 @@ import StepA from './step/StepA';
 import StepB from './step/StepB';
 import StepC from './step/StepC';
 
-// import TeamA from './team/a';
-// import TeamB from './team/b';
-// import TeamC from './team/c';
+import TeamA from './team/TeamA';
+import TeamB from './team/TeamB';
+import TeamC from './team/TeamC';
 
 // import TestimonialA from './testimonial/a';
 // import TestimonialB from './testimonial/b';
@@ -163,11 +163,11 @@ export default function getIcons() {
       StepB: <StepB />,
       StepC: <StepC />
     },
-    // Team: {
-    //   TeamA: <TeamA />,
-    //   TeamB: <TeamB />,
-    //   TeamC: <TeamC />
-    // },
+    Team: {
+      TeamA: <TeamA />,
+      TeamB: <TeamB />,
+      TeamC: <TeamC />
+    },
     // Testimonial: {
     //   TestimonialA: <TestimonialA />,
     //   TestimonialB: <TestimonialB />,
