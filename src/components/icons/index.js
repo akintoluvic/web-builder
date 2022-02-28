@@ -52,12 +52,12 @@ import HeaderB from './header/HeaderB';
 import HeaderC from './header/HeaderC';
 import HeaderD from './header/HeaderD';
 
-// import HeroA from './hero/a';
-// import HeroB from './hero/b';
-// import HeroC from './hero/c';
-// import HeroD from './hero/d';
-// import HeroE from './hero/e';
-// import HeroF from './hero/f';
+import HeroA from './hero/HeroA';
+import HeroB from './hero/HeroB';
+import HeroC from './hero/HeroC';
+import HeroD from './hero/HeroD';
+import HeroE from './hero/HeroE';
+import HeroF from './hero/HeroF';
 
 // import PricingA from './pricing/a';
 // import PricingB from './pricing/b';
@@ -141,14 +141,14 @@ export default function getIcons() {
       HeaderC: <HeaderC />,
       HeaderD: <HeaderD />
     }, 
-    // Hero: {
-    //   HeroA: <HeroA />,
-    //   HeroB: <HeroB />,
-    //   HeroC: <HeroC />,
-    //   HeroD: <HeroD />,
-    //   HeroE: <HeroE />,
-    //   HeroF: <HeroF />
-    // },
+    Hero: {
+      HeroA: <HeroA />,
+      HeroB: <HeroB />,
+      HeroC: <HeroC />,
+      HeroD: <HeroD />,
+      HeroE: <HeroE />,
+      HeroF: <HeroF />
+    },
     // Pricing: {
     //   PricingA: <PricingA />,
     //   PricingB: <PricingB />
