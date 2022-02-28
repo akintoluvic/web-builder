@@ -1,7 +1,4 @@
-import React from "react"
-
-function StatisticC() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <path
@@ -14,11 +11,11 @@ function StatisticC() {
         fill="var(--base-500)"
       />
       <rect
-        x={35}
-        y={84}
-        width={20}
-        height={4}
-        rx={2}
+        x="35"
+        y="84"
+        width="20"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
       <path
@@ -31,11 +28,11 @@ function StatisticC() {
         fill="var(--base-500)"
       />
       <rect
-        x={94}
-        y={84}
-        width={20}
-        height={4}
-        rx={2}
+        x="94"
+        y="84"
+        width="20"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
       <path
@@ -48,11 +45,11 @@ function StatisticC() {
         fill="var(--base-500)"
       />
       <rect
-        x={153}
-        y={84}
-        width={20}
-        height={4}
-        rx={2}
+        x="153"
+        y="84"
+        width="20"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
       <path
@@ -65,48 +62,45 @@ function StatisticC() {
         fill="var(--base-500)"
       />
       <rect
-        x={212}
-        y={84}
-        width={20}
-        height={4}
-        rx={2}
+        x="212"
+        y="84"
+        width="20"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
       <rect
-        x={81}
-        y={36}
-        width={104.391}
-        height={4}
-        rx={2}
+        x="81"
+        y="36"
+        width="104.391"
+        height="4"
+        rx="2"
         fill="var(--base-500)"
       />
       <rect
-        x={81}
-        y={36}
-        width={104.391}
-        height={4}
-        rx={2}
+        x="81"
+        y="36"
+        width="104.391"
+        height="4"
+        rx="2"
         fill="var(--base-500)"
       />
       <rect
-        x={96}
-        y={25}
-        width={74}
-        height={5}
-        rx={2.5}
+        x="96"
+        y="25"
+        width="74"
+        height="5"
+        rx="2.5"
         fill="var(--solid-900)"
       />
-      <rect x={97} y={44} width={73} height={4} rx={2} fill="var(--base-500)" />
+      <rect x="97" y="44" width="73" height="4" rx="2" fill="var(--base-500)" />
       <rect
-        x={113}
-        y={115}
-        width={40}
-        height={10}
-        rx={2}
+        x="113"
+        y="115"
+        width="40"
+        height="10"
+        rx="2"
         fill="var(--main-500)"
       />
     </svg>
-  )
-}
-
-export default StatisticC;
+</template>
