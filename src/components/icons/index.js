@@ -59,8 +59,8 @@ import HeroD from './hero/HeroD';
 import HeroE from './hero/HeroE';
 import HeroF from './hero/HeroF';
 
-// import PricingA from './pricing/a';
-// import PricingB from './pricing/b';
+import PricingA from './pricing/PricingA';
+import PricingB from './pricing/PricingB';
 
 // import StatisticA from './statistic/a';
 // import StatisticB from './statistic/b';
@@ -149,10 +149,10 @@ export default function getIcons() {
       HeroE: <HeroE />,
       HeroF: <HeroF />
     },
-    // Pricing: {
-    //   PricingA: <PricingA />,
-    //   PricingB: <PricingB />
-    // }, 
+    Pricing: {
+      PricingA: <PricingA />,
+      PricingB: <PricingB />
+    }, 
     // Statistic: {
     //   StatisticA: <StatisticA />,
     //   StatisticB: <StatisticB />,

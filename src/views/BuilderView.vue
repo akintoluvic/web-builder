@@ -41,7 +41,7 @@ export default {
       }
   },
   mounted() {
-      this.blog = getIcons().Blog.BlogC
+      this.blog = getIcons().Pricing.PricingB
       console.log(getIcons().Blog.BlogB)
   },
 }
