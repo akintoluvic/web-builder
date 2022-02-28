@@ -47,10 +47,10 @@ import GalleryA from './gallery/GalleryA';
 import GalleryB from './gallery/GalleryB';
 import GalleryC from './gallery/GalleryC';
 
-// import HeaderA from './header/a';
-// import HeaderB from './header/b';
-// import HeaderC from './header/c';
-// import HeaderD from './header/d';
+import HeaderA from './header/HeaderA';
+import HeaderB from './header/HeaderB';
+import HeaderC from './header/HeaderC';
+import HeaderD from './header/HeaderD';
 
 // import HeroA from './hero/a';
 // import HeroB from './hero/b';
@@ -135,12 +135,12 @@ export default function getIcons() {
       GalleryB: <GalleryB />,
       GalleryC: <GalleryC />
     }, 
-    // Header: {
-    //   HeaderA: <HeaderA />,
-    //   HeaderB: <HeaderB />,
-    //   HeaderC: <HeaderC />,
-    //   HeaderD: <HeaderD />
-    // }, 
+    Header: {
+      HeaderA: <HeaderA />,
+      HeaderB: <HeaderB />,
+      HeaderC: <HeaderC />,
+      HeaderD: <HeaderD />
+    }, 
     // Hero: {
     //   HeroA: <HeroA />,
     //   HeroB: <HeroB />,
