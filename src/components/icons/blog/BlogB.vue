@@ -2,11 +2,11 @@
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
-        x={20}
-        y={43}
-        width={68}
-        height={63}
-        rx={2}
+        x="20"
+        y="43"
+        width="68"
+        height="63"
+        rx="2"
         fill="var(--base-200)"
       />
       <path
@@ -22,11 +22,11 @@
         fill="var(--solid-900)"
       />
       <rect
-        x={99}
-        y={43}
-        width={68}
-        height={63}
-        rx={2}
+        x="99"
+        y="43"
+        width="68"
+        height="63"
+        rx="2"
         fill="var(--base-200)"
       />
       <path
@@ -42,11 +42,11 @@
         fill="var(--solid-900)"
       />
       <rect
-        x={178}
-        y={43}
-        width={68}
-        height={63}
-        rx={2}
+        x="178"
+        y="43"
+        width="68"
+        height="63"
+        rx="2"
         fill="var(--base-200)"
       />
       <path

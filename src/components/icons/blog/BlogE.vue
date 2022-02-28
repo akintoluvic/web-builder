@@ -17,7 +17,7 @@
         d="M20 60a3 3 0 013-3h6a3 3 0 110 6h-6a3 3 0 01-3-3z"
         fill="var(--base-300)"
       />
-      <circle cx={44} cy={88} r={5} fill="var(--base-300)" />
+      <circle cx="44" cy="88" r="5" fill="var(--base-300)" />
       <path
         d="M51 87.5a1.5 1.5 0 011.5-1.5h18a1.5 1.5 0 010 3h-18a1.5 1.5 0 01-1.5-1.5z"
         fill="var(--solid-900)"
@@ -38,7 +38,7 @@
         d="M99 60a3 3 0 013-3h6a3 3 0 110 6h-6a3 3 0 01-3-3z"
         fill="var(--base-300)"
       />
-      <circle cx={123} cy={88} r={5} fill="var(--base-300)" />
+      <circle cx="123" cy="88" r="5" fill="var(--base-300)" />
       <path
         d="M130 87.5a1.5 1.5 0 011.5-1.5h18a1.5 1.5 0 010 3h-18a1.5 1.5 0 01-1.5-1.5z"
         fill="var(--solid-900)"
@@ -59,7 +59,7 @@
         d="M178 60a3 3 0 013-3h6a3 3 0 110 6h-6a3 3 0 01-3-3z"
         fill="var(--base-300)"
       />
-      <circle cx={202} cy={88} r={5} fill="var(--base-300)" />
+      <circle cx="202" cy="88" r="5" fill="var(--base-300)" />
       <path
         d="M209 87.5a1.5 1.5 0 011.5-1.5h18a1.5 1.5 0 010 3h-18a1.5 1.5 0 01-1.5-1.5z"
         fill="var(--solid-900)"

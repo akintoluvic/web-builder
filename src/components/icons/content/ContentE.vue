@@ -6,19 +6,19 @@
         fill="var(--base-400)"
       />
       <rect
-        x={20}
-        y={69}
-        width={70}
-        height={5}
-        rx={2.5}
+        x="20"
+        y="69"
+        width="70"
+        height="5"
+        rx="2.5"
         fill="var(--solid-900)"
       />
       <rect
-        x={20}
-        y={78}
-        width={92}
-        height={5}
-        rx={2.5}
+        x="20"
+        y="78"
+        width="92"
+        height="5"
+        rx="2.5"
         fill="var(--solid-900)"
       />
       <path
@@ -30,11 +30,11 @@
         fill="var(--main-500)"
       />
       <rect
-        x={144}
-        y={84}
-        width={40}
-        height={10}
-        rx={2}
+        x="144"
+        y="84"
+        width="40"
+        height="10"
+        rx="2"
         fill="var(--main-500)"
       />
     </svg>
