@@ -36,11 +36,12 @@ import FeatureF from './feature/FeatureF';
 import FeatureG from './feature/FeatureG';
 import FeatureH from './feature/FeatureH';
 
-// import FooterA from './footer/a';
-// import FooterB from './footer/b';
-// import FooterC from './footer/c';
-// import FooterD from './footer/d';
-// import FooterE from './footer/e';
+// Svgs fixed
+import FooterA from './footer/FooterA';
+import FooterB from './footer/FooterB';
+import FooterC from './footer/FooterC';
+import FooterD from './footer/FooterD';
+import FooterE from './footer/FooterE';
 
 // import GalleryA from './gallery/a';
 // import GalleryB from './gallery/b';
@@ -122,14 +123,13 @@ export default function getIcons() {
       FeatureG: <FeatureG />,
       FeatureH: <FeatureH />
     },
-    // eslint-disable-next-line no-irregular-whitespace
-    // Footer: {
-    //   FooterA: <FooterA />,
-    //   FooterB: <FooterB />,
-    //   FooterC: <FooterC />,
-    //   FooterD: <FooterD />,
-    //   FooterE: <FooterE />
-    // },
+    Footer: {
+      FooterA: <FooterA />,
+      FooterB: <FooterB />,
+      FooterC: <FooterC />,
+      FooterD: <FooterD />,
+      FooterE: <FooterE />
+    },
     // Gallery: {
     //   GalleryA: <GalleryA />,
     //   GalleryB: <GalleryB />,

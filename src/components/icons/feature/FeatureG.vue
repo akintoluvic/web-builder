@@ -56,36 +56,36 @@
       />
       <path d="M143 97a2 2 0 11-4 0 2 2 0 014 0z" fill="var(--main-500)" />
       <rect
-        x={81}
-        y={31}
-        width={104.391}
-        height={4}
-        rx={2}
+        x="81"
+        y="31"
+        width="104.391"
+        height="4"
+        rx="2"
         fill="var(--base-500)"
       />
       <rect
-        x={81}
-        y={31}
-        width={104.391}
-        height={4}
-        rx={2}
+        x="81"
+        y="31"
+        width="104.391"
+        height="4"
+        rx="2"
         fill="var(--base-500)"
       />
       <rect
-        x={96}
-        y={20}
-        width={74}
-        height={5}
-        rx={2.5}
+        x="96"
+        y="20"
+        width="74"
+        height="5"
+        rx="2.5"
         fill="var(--solid-900)"
       />
-      <rect x={97} y={39} width={73} height={4} rx={2} fill="var(--base-500)" />
+      <rect x="97" y="39" width="73" height="4" rx="2" fill="var(--base-500)" />
       <rect
-        x={113}
-        y={120}
-        width={40}
-        height={10}
-        rx={2}
+        x="113"
+        y="120"
+        width="40"
+        height="10"
+        rx="2"
         fill="var(--main-500)"
       />
     </svg>
