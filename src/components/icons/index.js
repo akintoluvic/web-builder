@@ -66,9 +66,9 @@ import StatisticA from './statistic/StatisticA';
 import StatisticB from './statistic/StatisticB';
 import StatisticC from './statistic/StatisticC';
 
-// import StepA from './step/a';
-// import StepB from './step/b';
-// import StepC from './step/c';
+import StepA from './step/StepA';
+import StepB from './step/StepB';
+import StepC from './step/StepC';
 
 // import TeamA from './team/a';
 // import TeamB from './team/b';
@@ -158,11 +158,11 @@ export default function getIcons() {
       StatisticB: <StatisticB />,
       StatisticC: <StatisticC />
     }, 
-    // Step: {
-    //   StepA: <StepA />,
-    //   StepB: <StepB />,
-    //   StepC: <StepC />
-    // },
+    Step: {
+      StepA: <StepA />,
+      StepB: <StepB />,
+      StepC: <StepC />
+    },
     // Team: {
     //   TeamA: <TeamA />,
     //   TeamB: <TeamB />,
