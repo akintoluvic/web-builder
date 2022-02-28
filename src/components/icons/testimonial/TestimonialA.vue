@@ -1,52 +1,49 @@
-import React from "react"
-
-function TestimonialA() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <rect
-        x={25}
-        y={57}
-        width={104}
-        height={62}
-        rx={1}
+        x="25"
+        y="57"
+        width="104"
+        height="62"
+        rx="1"
         fill="var(--base-200)"
       />
-      <circle cx={39.5} cy={105.5} r={7.5} fill="var(--base-400)" />
+      <circle cx="39.5" cy="105.5" r="7.5" fill="var(--base-400)" />
       <path
         d="M52 108a1 1 0 011-1h24a1 1 0 010 2H53a1 1 0 01-1-1z"
         fill="var(--base-500)"
       />
       <rect
-        x={52}
-        y={101}
-        width={43}
-        height={3}
-        rx={1.5}
+        x="52"
+        y="101"
+        width="43"
+        height="3"
+        rx="1.5"
         fill="var(--solid-900)"
       />
       <rect
-        x={32}
-        y={75}
-        width={76}
-        height={3}
-        rx={1.5}
+        x="32"
+        y="75"
+        width="76"
+        height="3"
+        rx="1.5"
         fill="var(--base-500)"
       />
       <rect
-        x={32}
-        y={81}
-        width={88}
-        height={3}
-        rx={1.5}
+        x="32"
+        y="81"
+        width="88"
+        height="3"
+        rx="1.5"
         fill="var(--base-500)"
       />
       <rect
-        x={32}
-        y={87}
-        width={83}
-        height={3}
-        rx={1.5}
+        x="32"
+        y="87"
+        width="83"
+        height="3"
+        rx="1.5"
         fill="var(--base-500)"
       />
       <path
@@ -54,48 +51,48 @@ function TestimonialA() {
         fill="var(--base-500)"
       />
       <rect
-        x={137}
-        y={57}
-        width={104}
-        height={62}
-        rx={1}
+        x="137"
+        y="57"
+        width="104"
+        height="62"
+        rx="1"
         fill="var(--base-200)"
       />
-      <circle cx={151.5} cy={105.5} r={7.5} fill="var(--base-400)" />
+      <circle cx="151.5" cy="105.5" r="7.5" fill="var(--base-400)" />
       <path
         d="M164 108a1 1 0 011-1h24a1 1 0 010 2h-24a1 1 0 01-1-1z"
         fill="var(--base-500)"
       />
       <rect
-        x={164}
-        y={101}
-        width={43}
-        height={3}
-        rx={1.5}
+        x="164"
+        y="101"
+        width="43"
+        height="3"
+        rx="1.5"
         fill="var(--solid-900)"
       />
       <rect
-        x={144}
-        y={75}
-        width={76}
-        height={3}
-        rx={1.5}
+        x="144"
+        y="75"
+        width="76"
+        height="3"
+        rx="1.5"
         fill="var(--base-500)"
       />
       <rect
-        x={144}
-        y={81}
-        width={88}
-        height={3}
-        rx={1.5}
+        x="144"
+        y="81"
+        width="88"
+        height="3"
+        rx="1.5"
         fill="var(--base-500)"
       />
       <rect
-        x={144}
-        y={87}
-        width={83}
-        height={3}
-        rx={1.5}
+        x="144"
+        y="87"
+        width="83"
+        height="3"
+        rx="1.5"
         fill="var(--base-500)"
       />
       <path
@@ -103,15 +100,12 @@ function TestimonialA() {
         fill="var(--base-500)"
       />
       <rect
-        x={107}
-        y={31}
-        width={52}
-        height={5}
-        rx={2.5}
+        x="107"
+        y="31"
+        width="52"
+        height="5"
+        rx="2.5"
         fill="var(--solid-900)"
       />
     </svg>
-  )
-}
-
-export default TestimonialA;
+</template>

@@ -74,9 +74,9 @@ import TeamA from './team/TeamA';
 import TeamB from './team/TeamB';
 import TeamC from './team/TeamC';
 
-// import TestimonialA from './testimonial/a';
-// import TestimonialB from './testimonial/b';
-// import TestimonialC from './testimonial/c';
+import TestimonialA from './testimonial/TestimonialA';
+import TestimonialB from './testimonial/TestimonialB';
+import TestimonialC from './testimonial/TestimonialC';
 
 export default function getIcons() {
   return {
@@ -168,10 +168,10 @@ export default function getIcons() {
       TeamB: <TeamB />,
       TeamC: <TeamC />
     },
-    // Testimonial: {
-    //   TestimonialA: <TestimonialA />,
-    //   TestimonialB: <TestimonialB />,
-    //   TestimonialC: <TestimonialC />
-    // }
+    Testimonial: {
+      TestimonialA: <TestimonialA />,
+      TestimonialB: <TestimonialB />,
+      TestimonialC: <TestimonialC />
+    }
   }
 }
