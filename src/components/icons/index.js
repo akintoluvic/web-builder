@@ -43,9 +43,9 @@ import FooterC from './footer/FooterC';
 import FooterD from './footer/FooterD';
 import FooterE from './footer/FooterE';
 
-// import GalleryA from './gallery/a';
-// import GalleryB from './gallery/b';
-// import GalleryC from './gallery/c';
+import GalleryA from './gallery/GalleryA';
+import GalleryB from './gallery/GalleryB';
+import GalleryC from './gallery/GalleryC';
 
 // import HeaderA from './header/a';
 // import HeaderB from './header/b';
@@ -130,11 +130,11 @@ export default function getIcons() {
       FooterD: <FooterD />,
       FooterE: <FooterE />
     },
-    // Gallery: {
-    //   GalleryA: <GalleryA />,
-    //   GalleryB: <GalleryB />,
-    //   GalleryC: <GalleryC />
-    // }, 
+    Gallery: {
+      GalleryA: <GalleryA />,
+      GalleryB: <GalleryB />,
+      GalleryC: <GalleryC />
+    }, 
     // Header: {
     //   HeaderA: <HeaderA />,
     //   HeaderB: <HeaderB />,

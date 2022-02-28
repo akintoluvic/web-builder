@@ -1,7 +1,4 @@
-import React from "react"
-
-function GalleryB() {
-  return (
+<template>
     <svg viewBox="0 0 266 150" fill="none">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
       <path
@@ -17,11 +14,11 @@ function GalleryB() {
         fill="var(--main-500)"
       />
       <rect
-        x={108}
-        y={45}
-        width={50}
-        height={4}
-        rx={2}
+        x="108"
+        y="45"
+        width="50"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
       <path
@@ -33,11 +30,11 @@ function GalleryB() {
         fill="var(--main-500)"
       />
       <rect
-        x={89}
-        y={94}
-        width={26}
-        height={4}
-        rx={2}
+        x="89"
+        y="94"
+        width="26"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
       <path
@@ -49,15 +46,12 @@ function GalleryB() {
         fill="var(--main-500)"
       />
       <rect
-        x={154}
-        y={94}
-        width={26}
-        height={4}
-        rx={2}
+        x="154"
+        y="94"
+        width="26"
+        height="4"
+        rx="2"
         fill="var(--solid-900)"
       />
     </svg>
-  )
-}
-
-export default GalleryB;
+</template>
