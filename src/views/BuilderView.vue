@@ -26,8 +26,8 @@
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="mx-6 my-20 bg-white min-h-screen">
-          <div v-for="i in 4" :key="i">
-            <component :is="blocksList.Blog.BlogA" theme="red"  />
+          <div v-for="i in 4" :key="i" @click="switchTheme">
+            <component :is="blocksList.Blog.BlogA"  />
           </div>
         </main>
       </div>
@@ -53,9 +53,14 @@ export default {
       iconList: getIcons(),
       blocksList: getBlocks(),
       blockListArr: [],
+      theme: 'green',
     };
   },
-  methods: {},
+  methods: {
+      switchTheme() {
+          this.theme = 'yellow'
+      }
+  },
   mounted() {
     Object.entries(this.iconList).forEach(([type, icons]) => {
       Object.keys(icons).map((name) =>
