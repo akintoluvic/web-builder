@@ -23,7 +23,7 @@
                 <div class="flex items-center flex-wrap">
                   <a 
                     href=""
-                    :class="themeColor"
+                    :class="theme.themeColor"
                     class="inline-flex items-center md:mb-2 lg:mb-0" 
                     
                   >
@@ -95,7 +95,7 @@
                 <div class="flex items-center flex-wrap">
                   <a 
                     href=""
-                    :class="themeColor"
+                    :class="theme.themeColor"
                     class="inline-flex items-center md:mb-2 lg:mb-0" 
                     
                   >
@@ -167,7 +167,7 @@
                 <div class="flex items-center flex-wrap">
                   <a 
                     href=""
-                    :class="[themeColor]"
+                    :class="theme.themeColor"
                     class="inline-flex items-center md:mb-2 lg:mb-0" 
                     
                   >
@@ -223,40 +223,12 @@
     </section>    
 </template>
 <script>
+import { useTheme } from "@/compossable/theme";
 export default {
-  props: {
-    theme: {
-      type: String,
-      default: 'indigo',
-    },
-    dark: {
-      type: Boolean,
-      default: false,
-    },
+  data() {
+    return {
+      theme: useTheme(),
+    }
   },
-  computed: {
-    themeColor() {
-      switch (this.theme) {
-        case 'red':
-          return 'text-red-400'
-        case 'orange':
-          return 'text-orange-400'
-        case 'green':
-          return 'text-green-400'
-        case 'yellow':
-          return 'text-yellow-400'
-        case 'blue':
-          return 'text-blue-400'
-        case 'purple':
-          return 'text-purple-400'
-        case 'pink':
-          return 'text-pink-400'
-          
-        default:
-          return `text-indigo-400`
-      }
-      // 
-    },
-  }
 }
 </script>
