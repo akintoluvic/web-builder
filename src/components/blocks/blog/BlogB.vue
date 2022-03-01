@@ -1,24 +1,23 @@
-
 <template>
-    <section className="text-gray-400 dark:bg-gray-900 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap -m-4">
-          <div className="p-4 lg:w-1/3">
-            <div className="h-full bg-gray-800 bg-opacity-40 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-              <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+    <section class="text-gray-400 dark:bg-gray-900 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-4">
+          <div class="p-4 lg:w-1/3">
+            <div class="h-full bg-gray-100 bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-40 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
                 CATEGORY
               </h2>
-              <h1 className="title-font sm:text-2xl text-xl font-medium text-white mb-3">
+              <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 dark:text-white mb-3">
                 Raclette Blueberry Nextious Level
               </h1>
-              <p className="leading-relaxed mb-3">
+              <p class="leading-relaxed mb-3">
                 Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
                 microdosing tousled waistcoat.
               </p>
-              <a href className="inline-flex items-center`">
+              <a href class="inline-flex items-center" :class="theme.themeColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -30,10 +29,10 @@
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
-                <span className="text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-700 border-opacity-50">
+              <div class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+                <span class="text-gray-400 dark:text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200 dark:border-gray-700 dark:border-opacity-50">
                   <svg
-                    className="w-4 h-4 mr-1"
+                    class="w-4 h-4 mr-1"
                     stroke="currentColor"
                     strokeWidth="2"
                     fill="none"
@@ -46,9 +45,9 @@
                   </svg>
                   1.2K
                 </span>
-                <span className="text-gray-500 inline-flex items-center leading-none text-sm">
+                <span class="text-gray-400 dark:text-gray-500 inline-flex items-center leading-none text-sm">
                   <svg
-                    className="w-4 h-4 mr-1"
+                    class="w-4 h-4 mr-1"
                     stroke="currentColor"
                     strokeWidth="2"
                     fill="none"
@@ -63,22 +62,22 @@
               </div>
             </div>
           </div>
-          <div className="p-4 lg:w-1/3">
-            <div className="h-full bg-gray-800 bg-opacity-40 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-              <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+          <div class="p-4 lg:w-1/3">
+            <div class="h-full bg-gray-100 bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-40 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
                 CATEGORY
               </h2>
-              <h1 className="title-font sm:text-2xl text-xl font-medium text-white mb-3">
+              <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 dark:text-white mb-3">
                 Ennui Snackwave Thundercats
               </h1>
-              <p className="leading-relaxed mb-3">
+              <p class="leading-relaxed mb-3">
                 Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
                 microdosing tousled waistcoat.
               </p>
-              <a href className="inline-flex items-center`">
+              <a href class="inline-flex items-center" :class="theme.themeColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -90,10 +89,10 @@
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
-                <span className="text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-700 border-opacity-50">
+              <div class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+                <span class="text-gray-400 dark:text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200 dark:border-gray-700 dark:border-opacity-50">
                   <svg
-                    className="w-4 h-4 mr-1"
+                    class="w-4 h-4 mr-1"
                     stroke="currentColor"
                     strokeWidth="2"
                     fill="none"
@@ -106,9 +105,9 @@
                   </svg>
                   1.2K
                 </span>
-                <span className="text-gray-500 inline-flex items-center leading-none text-sm">
+                <span class="text-gray-400 dark:text-gray-500 inline-flex items-center leading-none text-sm">
                   <svg
-                    className="w-4 h-4 mr-1"
+                    class="w-4 h-4 mr-1"
                     stroke="currentColor"
                     strokeWidth="2"
                     fill="none"
@@ -123,22 +122,22 @@
               </div>
             </div>
           </div>
-          <div className="p-4 lg:w-1/3">
-            <div className="h-full bg-gray-800 bg-opacity-40 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-              <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+          <div class="p-4 lg:w-1/3">
+            <div class="h-full bg-gray-100 bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-40 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
                 CATEGORY
               </h2>
-              <h1 className="title-font sm:text-2xl text-xl font-medium text-white mb-3">
+              <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 dark:text-white mb-3">
                 Selvage Poke Waistcoat Godard
               </h1>
-              <p className="leading-relaxed mb-3">
+              <p class="leading-relaxed mb-3">
                 Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
                 microdosing tousled waistcoat.
               </p>
-              <a href className="inline-flex items-center`">
+              <a href class="inline-flex items-center" :class="theme.themeColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -150,10 +149,10 @@
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
-                <span className="text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-700 border-opacity-50">
+              <div class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+                <span class="text-gray-400 dark:text-gray-500 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200 dark:border-gray-700 dark:border-opacity-50">
                   <svg
-                    className="w-4 h-4 mr-1"
+                    class="w-4 h-4 mr-1"
                     stroke="currentColor"
                     strokeWidth="2"
                     fill="none"
@@ -166,9 +165,9 @@
                   </svg>
                   1.2K
                 </span>
-                <span className="text-gray-500 inline-flex items-center leading-none text-sm">
+                <span class="text-gray-400 dark:text-gray-500 inline-flex items-center leading-none text-sm">
                   <svg
-                    className="w-4 h-4 mr-1"
+                    class="w-4 h-4 mr-1"
                     stroke="currentColor"
                     strokeWidth="2"
                     fill="none"
