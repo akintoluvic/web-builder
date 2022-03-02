@@ -17,7 +17,7 @@
             v-for="(icon, i) in icons"
             :key="i"
             class="shadow-sm rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
-            @click="e => clickIcon(i)"
+            @click="e => clickIcon([i, type])"
           >
             <component :is="icon" />
           </div>
@@ -27,14 +27,15 @@
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="mx-6 my-20 bg-white min-h-screen">
-          <div v-for="i in 4" :key="i" @click="switchTheme">
-            <component :is="blocksList.Blog.BlogE"  />
+          <div v-for="(currentIcon, index) in selectedIcons" :key="index" @click="switchTheme">
+            <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
           </div>
         </main>
       </div>
 
       <!-- customise components sidebar -->
-      <div class="w-72 bg-white py-20">Customise
+      <div class="w-72 bg-white py-20">
+        <h3 class="px-8">Customise component</h3>
         {{ selectedIcons }}
       </div>
     </div>
