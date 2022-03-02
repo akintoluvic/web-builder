@@ -27,7 +27,7 @@
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="mx-6 my-20 bg-white min-h-screen">
           <div v-for="i in 4" :key="i" @click="switchTheme">
-            <component :is="blocksList.Blog.BlogB"  />
+            <component :is="blocksList.Blog.BlogE"  />
           </div>
         </main>
       </div>

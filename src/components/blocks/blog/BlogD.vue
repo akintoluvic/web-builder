@@ -1,20 +1,16 @@
-import React from 'react';
-import PropTypes from  "prop-types";
-
-function LightBlogD(props) {
-  return (
-    <section className="text-gray-600 body-font overflow-hidden">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="-my-8 divide-y-2 divide-gray-100">
-          <div className="py-8 flex flex-wrap md:flex-nowrap">
-            <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span className="font-semibold title-font text-gray-700">
+<template>
+    <section class="text-gray-600 default:text-gray-400 dark:bg-gray-900 body-font overflow-hidden">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="-my-8 divide-y-2 divide-gray-100 dark:divide-gray-800">
+          <div class="py-8 flex flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-gray-700 dark:text-white">
                 CATEGORY
               </span>
-              <span className="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+              <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
             </div>
-            <div className="md:flex-grow">
-              <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+            <div class="md:flex-grow">
+              <h2 className="text-2xl font-medium text-gray-900 dark:text-white title-font mb-2">
                 Bitters hashtag waistcoat fashion axe chia unicorn
               </h2>
               <p className="leading-relaxed">
@@ -23,13 +19,13 @@ function LightBlogD(props) {
                 bag selfies, poke vaporware kombucha lumbersexual pork belly
                 polaroid hoodie portland craft beer.
               </p>
-              <a href className={`text-${props.theme}-500 inline-flex items-center mt-4`}>
+              <a href class="inline-flex items-center mt-4" :class="theme.textColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -40,30 +36,30 @@ function LightBlogD(props) {
               </a>
             </div>
           </div>
-          <div className="py-8 flex flex-wrap md:flex-nowrap">
-            <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span className="font-semibold title-font text-gray-700">
+          <div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-gray-700 dark:text-white">
                 CATEGORY
               </span>
-              <span className="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+              <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
             </div>
-            <div className="md:flex-grow">
-              <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+            <div class="md:flex-grow">
+              <h2 className="text-2xl font-medium text-gray-900 dark:text-white title-font mb-2">
                 Meditation bushwick direct trade taxidermy shaman
               </h2>
-              <p className="leading-relaxed">
+              <p class="leading-relaxed">
                 Glossier echo park pug, church-key sartorial biodiesel vexillologist
                 pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger
                 bag selfies, poke vaporware kombucha lumbersexual pork belly
                 polaroid hoodie portland craft beer.
               </p>
-              <a href className={`text-${props.theme}-500 inline-flex items-center mt-4`}>
+              <a href class="inline-flex items-center mt-4" :class="theme.textColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -74,30 +70,30 @@ function LightBlogD(props) {
               </a>
             </div>
           </div>
-          <div className="py-8 flex flex-wrap md:flex-nowrap">
-            <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span className="font-semibold title-font text-gray-700">
+          <div class="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+              <span class="font-semibold title-font text-gray-700 dark:text-white">
                 CATEGORY
               </span>
-              <span className="text-sm text-gray-500">12 Jun 2019</span>
+              <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
             </div>
-            <div className="md:flex-grow">
-              <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+            <div class="md:flex-grow">
+              <h2 className="text-2xl font-medium text-gray-900 dark:text-white title-font mb-2">
                 Woke master cleanse drinking vinegar salvia
               </h2>
-              <p className="leading-relaxed">
+              <p class="leading-relaxed">
                 Glossier echo park pug, church-key sartorial biodiesel vexillologist
                 pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger
                 bag selfies, poke vaporware kombucha lumbersexual pork belly
                 polaroid hoodie portland craft beer.
               </p>
-              <a href className={`text-${props.theme}-500 inline-flex items-center mt-4`}>
+              <a href class="inline-flex items-center mt-4" :class="theme.textColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -111,15 +107,14 @@ function LightBlogD(props) {
         </div>
       </div>
     </section>
-  )
+</template>
+<script>
+import { useTheme } from "@/compossable/theme";
+export default {
+  data() {
+    return {
+      theme: useTheme(),
+    }
+  },
 }
-
-LightBlogD.defaultProps = {
-  theme: 'indigo'
-};
-
-LightBlogD.propTypes = {
-  theme: PropTypes.string.isRequired
-};
-
-export default LightBlogD;
+</script>
