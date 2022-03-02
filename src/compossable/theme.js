@@ -19,6 +19,8 @@ export function useTheme() {
             return 'text-purple-400'
           case 'pink':
             return 'text-pink-400'
+          case 'indigo':
+              return 'text-indigo-400'
             
           default:
             return `text-indigo-400`
