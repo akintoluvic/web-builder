@@ -6,7 +6,17 @@
     <!-- components sidebar -->
     <div class="h-screen flex">
       <div class="w-60 h-screen overflow-y-scroll bg-slate-200 py-20">
-        <h3 class="px-8">Page Title</h3>
+        <h3 class="px-8">Page Sections</h3>
+        <div class="mx-2 mb-5">
+          <h4 
+            class="text-sm px-6"
+            v-for="(component, index) in selectedIcons"
+            :key="index"
+          >
+            {{ component[0] }}
+          </h4>
+        </div>
+        <h3 class="px-8">Add new section</h3>
         <div
           v-for="(icons, type) in iconList"
           :key="type"
@@ -14,10 +24,10 @@
         >
           <h2 class="mb-5">{{ type }}</h2>
           <div
-            v-for="(icon, i) in icons"
-            :key="i"
+            v-for="(icon, index) in icons"
+            :key="index"
             class="shadow-sm rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
-            @click="e => clickIcon([i, type])"
+            @click="e => addComponent([index, type])"
           >
             <component :is="icon" />
           </div>
@@ -65,8 +75,7 @@ export default {
       switchTheme() {
           this.theme = 'yellow'
       },
-      clickIcon(val) {
-        console.log(val)
+      addComponent(val) {
         this.selectedIcons = [...this.selectedIcons, val]
       }
   },
