@@ -3,10 +3,21 @@
     <!-- Top Bar -->
     <TopBar />
 
-    <!-- components sidebar -->
+    
     <div class="h-screen flex">
+      <!-- components sidebar -->
       <div class="w-60 h-screen overflow-y-scroll bg-slate-200 py-20">
-        <h3 class="px-8">Page Title</h3>
+        <h3 class="px-8">Page Sections</h3>
+        <div class="mx-2 mb-5">
+          <h4 
+            class="text-sm px-6"
+            v-for="(component, index) in selectedIcons"
+            :key="index"
+          >
+            {{ component[0] }}
+          </h4>
+        </div>
+        <h3 class="px-8">Add new section</h3>
         <div
           v-for="(icons, type) in iconList"
           :key="type"
@@ -14,9 +25,10 @@
         >
           <h2 class="mb-5">{{ type }}</h2>
           <div
-            v-for="(icon, i) in icons"
-            :key="i"
+            v-for="(icon, index) in icons"
+            :key="index"
             class="shadow-sm rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
+            @click="e => addComponent([index, type])"
           >
             <component :is="icon" />
           </div>
@@ -26,8 +38,8 @@
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="mx-6 my-20 bg-white min-h-screen">
-          <div v-for="i in 4" :key="i">
-            <component :is="blocksList.Blog.BlogB" />
+          <div v-for="(currentIcon, index) in selectedIcons" :key="index" @click="switchTheme">
+            <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
           </div>
         </main>
       </div>
@@ -45,6 +57,10 @@
             :aria-label="`select ${key} theme`"
           ></button>
         </div>
+        <div class="w-72 bg-white py-20">
+          <h3 class="px-8">Customise component</h3>
+          {{ selectedIcons }}
+        </div>
       </div>
     </div>
   </div>
@@ -54,8 +70,8 @@
 import TopBar from "@/components/builder/TopBar.vue";
 import getIcons from "@/components/icons";
 import getBlocks from "@/components/blocks";
-import { useTheme,  } from "@/compossable/theme";
-import { ref } from 'vue'
+// import { useTheme,  } from "@/compossable/theme";
+// import { ref } from 'vue'
 
 
 export default {
@@ -77,22 +93,32 @@ export default {
         indigo: 'bg-indigo-500',
         pink: 'bg-pink-500',
         purple: 'bg-purple-500',
-      }
+      },
+      theme: 'green',
+      selectedIcons: [],
     };
   },
-  setup() {
-    const state = ref('blue')
-    const { theme  } = useTheme()
-    const switchTheme = newTheme => {
-        // useSetTheme(newTheme)
-        // console.log(this.theme)
-        // this.theme = newTheme
-        console.log(state)
-        state.value = newTheme
-        console.log(state)
-    }
+  // setup() {
+  //   const state = ref('blue')
+  //   const { theme  } = useTheme()
+  //   const switchTheme = newTheme => {
+  //       // useSetTheme(newTheme)
+  //       // console.log(this.theme)
+  //       // this.theme = newTheme
+  //       console.log(state)
+  //       state.value = newTheme
+  //       console.log(state)
+  //   }
     
-    return { state, theme, switchTheme }
+  //   return { state, theme, switchTheme }
+  // },
+  methods: {
+      switchTheme() {
+          this.theme = 'yellow'
+      },
+      addComponent(val) {
+        this.selectedIcons = [...this.selectedIcons, val]
+      }
   },
   mounted() {
     Object.entries(this.iconList).forEach(([type, icons]) => {

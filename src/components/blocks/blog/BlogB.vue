@@ -14,7 +14,7 @@
                 Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
                 microdosing tousled waistcoat.
               </p>
-              <a href class="inline-flex items-center" :class="theme.themeColor">
+              <a href class="inline-flex items-center" :class="theme.textColor">
                 Learn More
                 <svg
                   class="w-4 h-4 ml-2"
@@ -74,7 +74,7 @@
                 Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
                 microdosing tousled waistcoat.
               </p>
-              <a href class="inline-flex items-center" :class="theme.themeColor">
+              <a href class="inline-flex items-center" :class="theme.textColor">
                 Learn More
                 <svg
                   class="w-4 h-4 ml-2"
@@ -134,7 +134,7 @@
                 Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
                 microdosing tousled waistcoat.
               </p>
-              <a href class="inline-flex items-center" :class="theme.themeColor">
+              <a href class="inline-flex items-center" :class="theme.textColor">
                 Learn More
                 <svg
                   class="w-4 h-4 ml-2"

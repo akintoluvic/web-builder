@@ -1,33 +1,32 @@
-import React from 'react';
-import PropTypes from  "prop-types";
-
-function DarkBlogC(props) {
-  return (
-    <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-wrap -m-12">
-          <div className="p-12 md:w-1/2 flex flex-col items-start">
-            <span className="inline-block py-1 px-2 rounded bg-gray-800 text-gray-400 text-opacity-75 text-xs font-medium tracking-widest">
+<template>
+    <section class="text-gray-600 dark:text-gray-400 dark:bg-gray-900 body-font overflow-hidden">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-12">
+          <div class="p-12 md:w-1/2 flex flex-col items-start">
+            <span 
+              class="inline-block py-1 px-2 rounded dark:bg-gray-800 dark:text-gray-400 text-opacity-75 text-xs font-medium tracking-widest"
+              :class="[theme.textBgColor, theme.textColor]"
+            >
               CATEGORY
             </span>
-            <h2 className="sm:text-3xl text-2xl title-font font-medium text-white mt-4 mb-4">
+            <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-white mt-4 mb-4">
               Roof party normcore before they sold out, cornhole vape
             </h2>
-            <p className="leading-relaxed mb-8">
+            <p class="leading-relaxed mb-8">
               Live-edge letterpress cliche, salvia fanny pack humblebrag narwhal
               portland. VHS man braid palo santo hoodie brunch trust fund. Bitters
               hashtag waistcoat fashion axe chia unicorn. Plaid fixie chambray 90's,
               slow-carb etsy tumeric. Cray pug you probably haven't heard of them
               hexagon kickstarter craft beer pork chic.
             </p>
-            <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-800 border-opacity-75 mt-auto w-full">
-              <a href className={`text-${props.theme}-400 inline-flex items-center`}>
+            <div class="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 dark:border-gray-800 dark:border-opacity-75 mt-auto w-full">
+              <a href class="inline-flex items-center" :class="theme.textColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -36,26 +35,26 @@ function DarkBlogC(props) {
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <span className="text-gray-500 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
+              <span class="text-gray-500 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
                 <svg
-                  className="w-4 h-4 mr-1"
+                  class="w-4 h-4 mr-1"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   viewBox="0 0 24 24"
                 >
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
+                  <circle cx="12" cy="12" r="3" />
                 </svg>
                 1.2K
               </span>
-              <span className="text-gray-500 inline-flex items-center leading-none text-sm">
+              <span class="text-gray-500 inline-flex items-center leading-none text-sm">
                 <svg
-                  className="w-4 h-4 mr-1"
+                  class="w-4 h-4 mr-1"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -66,41 +65,44 @@ function DarkBlogC(props) {
                 6
               </span>
             </div>
-            <a href className="inline-flex items-center">
+            <a href class="inline-flex items-center">
               <img
                 alt="blog"
                 src="https://dummyimage.com/104x104"
-                className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
               />
-              <span className="flex-grow flex flex-col pl-4">
-                <span className="title-font font-medium text-white">
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-900 dark:text-white">
                   Holden Caulfield
                 </span>
-                <span className="text-gray-500 text-xs tracking-widest mt-0.5">UI DEVELOPER</span>
+                <span class="text-gray-500 text-xs tracking-widest mt-0.5">UI DEVELOPER</span>
               </span>
             </a>
           </div>
-          <div className="p-12 md:w-1/2 flex flex-col items-start">
-            <span className="inline-block py-1 px-2 rounded bg-gray-800 text-gray-400 text-opacity-75 text-xs font-medium tracking-widest">
+          <div class="p-12 md:w-1/2 flex flex-col items-start">
+            <span 
+              class="inline-block py-1 px-2 rounded dark:bg-gray-800 dark:text-gray-400 text-opacity-75 text-xs font-medium tracking-widest"
+              :class="[theme.textBgColor, theme.textColor]"
+            >
               CATEGORY
             </span>
-            <h2 className="sm:text-3xl text-2xl title-font font-medium text-white mt-4 mb-4">
+            <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-white mt-4 mb-4">
               Pinterest DIY dreamcatcher gentrify single-origin coffee
             </h2>
-            <p className="leading-relaxed mb-8">
+            <p class="leading-relaxed mb-8">
               Live-edge letterpress cliche, salvia fanny pack humblebrag narwhal
               portland. VHS man braid palo santo hoodie brunch trust fund. Bitters
               hashtag waistcoat fashion axe chia unicorn. Plaid fixie chambray 90's,
               slow-carb etsy tumeric.
             </p>
-            <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-800 border-opacity-75 mt-auto w-full">
-              <a href className={`text-${props.theme}-400 inline-flex items-center`}>
+            <div class="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 dark:border-gray-800 dark:border-opacity-75 mt-auto w-full">
+              <a href class="inline-flex items-center" :class="theme.textColor">
                 Learn More
                 <svg
-                  className="w-4 h-4 ml-2"
+                  class="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -109,26 +111,26 @@ function DarkBlogC(props) {
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <span className="text-gray-500 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
+              <span class="text-gray-500 mr-3 inline-flex items-center ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
                 <svg
-                  className="w-4 h-4 mr-1"
+                  class="w-4 h-4 mr-1"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   viewBox="0 0 24 24"
                 >
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
+                  <circle cx="12" cy="12" r="3" />
                 </svg>
                 1.2K
               </span>
-              <span className="text-gray-500 inline-flex items-center leading-none text-sm">
+              <span class="text-gray-500 inline-flex items-center leading-none text-sm">
                 <svg
-                  className="w-4 h-4 mr-1"
+                  class="w-4 h-4 mr-1"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth="2"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -139,32 +141,31 @@ function DarkBlogC(props) {
                 6
               </span>
             </div>
-            <a href className="inline-flex items-center">
+            <a href class="inline-flex items-center">
               <img
                 alt="blog"
                 src="https://dummyimage.com/103x103"
-                className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
               />
-              <span className="flex-grow flex flex-col pl-4">
-                <span className="title-font font-medium text-white">
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-900 dark:text-white">
                   Alper Kamu
                 </span>
-                <span className="text-gray-500 text-xs tracking-widest mt-0.5">DESIGNER</span>
+                <span class="text-gray-500 text-xs tracking-widest mt-0.5">DESIGNER</span>
               </span>
             </a>
           </div>
         </div>
       </div>
     </section>
-  )
+</template>
+<script>
+import { useTheme } from "@/compossable/theme";
+export default {
+  data() {
+    return {
+      theme: useTheme(),
+    }
+  },
 }
-
-DarkBlogC.defaultProps = {
-  theme: 'indigo'
-};
-
-DarkBlogC.propTypes = {
-  theme: PropTypes.string.isRequired
-};
-
-export default DarkBlogC;
+</script>
