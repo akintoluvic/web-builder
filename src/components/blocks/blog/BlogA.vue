@@ -23,7 +23,7 @@
                 <div class="flex items-center flex-wrap">
                   <a 
                     href=""
-                    :class="theme.themeColor"
+                    :class="theme.textColor"
                     class="inline-flex items-center md:mb-2 lg:mb-0" 
                     
                   >
@@ -95,7 +95,7 @@
                 <div class="flex items-center flex-wrap">
                   <a 
                     href=""
-                    :class="theme.themeColor"
+                    :class="theme.textColor"
                     class="inline-flex items-center md:mb-2 lg:mb-0" 
                     
                   >
@@ -167,7 +167,7 @@
                 <div class="flex items-center flex-wrap">
                   <a 
                     href=""
-                    :class="theme.themeColor"
+                    :class="theme.textColor"
                     class="inline-flex items-center md:mb-2 lg:mb-0" 
                     
                   >
