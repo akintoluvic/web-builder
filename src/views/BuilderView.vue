@@ -17,6 +17,7 @@
             v-for="(icon, i) in icons"
             :key="i"
             class="shadow-sm rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
+            @click="e => clickIcon(i)"
           >
             <component :is="icon" />
           </div>
@@ -33,7 +34,9 @@
       </div>
 
       <!-- customise components sidebar -->
-      <div class="w-72 bg-white py-20">Customise</div>
+      <div class="w-72 bg-white py-20">Customise
+        {{ selectedIcons }}
+      </div>
     </div>
   </div>
 </template>
@@ -54,11 +57,16 @@ export default {
       blocksList: getBlocks(),
       blockListArr: [],
       theme: 'green',
+      selectedIcons: [],
     };
   },
   methods: {
       switchTheme() {
           this.theme = 'yellow'
+      },
+      clickIcon(val) {
+        console.log(val)
+        this.selectedIcons = [...this.selectedIcons, val]
       }
   },
   mounted() {
