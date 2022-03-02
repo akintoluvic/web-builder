@@ -26,8 +26,12 @@ export function useTheme() {
             return `text-indigo-400`
         }
       })
+      
+  return { theme, themeColor,  }
+}
 
-
-
-  return { theme, themeColor }
+export function useSetTheme(newTheme) {
+  const { theme } = useTheme()
+  console.log(theme, newTheme)
+  theme.value = newTheme
 }

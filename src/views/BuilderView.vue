@@ -26,23 +26,23 @@
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="mx-6 my-20 bg-white min-h-screen">
-          <div v-for="i in 4" :key="i" >
-            <component :is="blocksList.Blog.BlogB"  />
+          <div v-for="i in 4" :key="i">
+            <component :is="blocksList.Blog.BlogB" />
           </div>
         </main>
       </div>
 
       <!-- customise components sidebar -->
       <div class="w-72 bg-white py-20 px-8">
-        <h3>Choose theme</h3>
+        <h3 class="text-sm">Choose theme</h3>
         <div class="w-full flex justify-between py-2 px-3 bg-slate-100 rounded-2xl">
           <button 
-            v-for="theme in themeList" 
-            :key="theme[0]" 
+            v-for="(theme, key) in themeList" 
+            :key="theme" 
             class="rounded-full w-4 h-4" 
-            :class="theme[1]"
-            @click="switchTheme(theme[0])"
-            :aria-label="`${theme[0]} theme`"
+            :class="theme"
+            @click="switchTheme(key)"
+            :aria-label="`select ${key} theme`"
           ></button>
         </div>
       </div>
@@ -50,10 +50,13 @@
   </div>
 </template>
 
-<script>
+<script >
 import TopBar from "@/components/builder/TopBar.vue";
 import getIcons from "@/components/icons";
 import getBlocks from "@/components/blocks";
+import { useTheme,  } from "@/compossable/theme";
+import { ref } from 'vue'
+
 
 export default {
   name: "BuilderView",
@@ -65,24 +68,31 @@ export default {
       iconList: getIcons(),
       blocksList: getBlocks(),
       blockListArr: [],
-      theme: 'green',
-      themeList: [
-        ['blue', 'bg-blue-500'],
-        ['red', 'bg-red-500'],
-        ['orange', 'bg-orange-500'],
-        ['green', 'bg-green-500'],
-        ['yellow', 'bg-yellow-500'],
-        ['purple', 'bg-purple-500'],
-        ['pink', 'bg-pink-500'],
-        ['indigo', 'bg-indigo-500'],
-      ]
+      currentTheme: 'green',
+      themeList: {
+        blue: 'bg-blue-500',
+        red: 'bg-red-500',
+        orange: 'bg-orange-500',
+        yellow: 'bg-yellow-500',
+        indigo: 'bg-indigo-500',
+        pink: 'bg-pink-500',
+        purple: 'bg-purple-500',
+      }
     };
   },
-  methods: {
-      switchTheme(theme) {
-        console.log(theme)
-          this.theme = theme
-      }
+  setup() {
+    const state = ref('blue')
+    const { theme  } = useTheme()
+    const switchTheme = newTheme => {
+        // useSetTheme(newTheme)
+        // console.log(this.theme)
+        // this.theme = newTheme
+        console.log(state)
+        state.value = newTheme
+        console.log(state)
+    }
+    
+    return { state, theme, switchTheme }
   },
   mounted() {
     Object.entries(this.iconList).forEach(([type, icons]) => {
