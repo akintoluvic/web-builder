@@ -1,7 +1,8 @@
 # DragBuilder
 
 ```
-Built with Vue 3, Tailwind CSS, Hero Icons
+Built with Vue 3, Tailwind CSS, Hero Icons...
+Inspired by [Tailblocks](https://tailblocks.cc/)
 
 ## Project setup
 ```
