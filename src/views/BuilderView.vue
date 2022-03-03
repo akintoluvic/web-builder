@@ -38,7 +38,7 @@
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="mx-6 my-20 bg-white min-h-screen">
-          <div v-for="(currentIcon, index) in selectedIcons" :key="index" @click="switchTheme">
+          <div v-for="(currentIcon, index) in selectedIcons" :key="index">
             <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
           </div>
         </main>
@@ -53,7 +53,7 @@
             :key="theme" 
             class="rounded-full w-4 h-4" 
             :class="theme"
-            @click="switchTheme(key)"
+            @click="e => switchTheme(key)"
             :aria-label="`select ${key} theme`"
           ></button>
         </div>
@@ -113,8 +113,9 @@ export default {
   //   return { state, theme, switchTheme }
   // },
   methods: {
-      switchTheme() {
-          this.theme = 'yellow'
+      switchTheme(newTheme) {
+          this.theme = newTheme
+          console.log(this.theme)
       },
       addComponent(val) {
         this.selectedIcons = [...this.selectedIcons, val]
