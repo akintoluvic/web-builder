@@ -1,14 +1,14 @@
 <template>
-  <div class="h-screen">
+  <div class="h-screen w-screen overflow-x-hidden">
     <!-- Top Bar -->
     <TopBar />
 
     
     <div class="h-screen flex">
       <!-- components sidebar -->
-      <div class="w-60 h-screen overflow-y-scroll bg-slate-200 py-20">
+      <div class="w-60 flex-shrink-0 max-w-60 h-screen overflow-y-scroll bg-slate-200 py-20">
         <h3 class="px-8">Page Sections</h3>
-        <div class="mx-2 mb-5">
+        <div class="px-2 mb-5">
           <h4 
             class="text-sm px-6"
             v-for="(component, index) in selectedIcons"
@@ -37,7 +37,7 @@
 
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
-        <main class="mx-6 my-20 bg-white min-h-screen">
+        <main class="px-6 my-12 bg-white min-h-screen">
           <div v-for="(currentIcon, index) in selectedIcons" :key="index">
             <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
           </div>
@@ -45,8 +45,8 @@
       </div>
 
       <!-- customise components sidebar -->
-      <div class="w-72 bg-slate-200 py-20 px-8">
-        <h3 class="text-sm">Choose theme</h3>
+      <div class="w-72 flex-grow-0 bg-slate-200 py-20 px-8">
+        <h3 class="text-sm mb-2">Choose theme</h3>
         <div class="w-full flex justify-between py-2 px-3 bg-slate-100 rounded-2xl">
           <button 
             v-for="(theme, key) in themeList" 
@@ -57,9 +57,9 @@
             :aria-label="`select ${key} theme`"
           ></button>
         </div>
-        <div class="w-72 py-20">
-          <h3 class="px-8">Customise component</h3>
-          {{ selectedIcons }}
+        <div class="w-72 py-5">
+          <h3 class="text-sm">Customise component</h3>
+          <!-- {{ selectedIcons }} -->
         </div>
       </div>
     </div>
