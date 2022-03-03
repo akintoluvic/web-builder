@@ -45,7 +45,7 @@
       </div>
 
       <!-- customise components sidebar -->
-      <div class="w-72 bg-white py-20 px-8">
+      <div class="w-72 bg-slate-200 py-20 px-8">
         <h3 class="text-sm">Choose theme</h3>
         <div class="w-full flex justify-between py-2 px-3 bg-slate-100 rounded-2xl">
           <button 
@@ -57,7 +57,7 @@
             :aria-label="`select ${key} theme`"
           ></button>
         </div>
-        <div class="w-72 bg-white py-20">
+        <div class="w-72 py-20">
           <h3 class="px-8">Customise component</h3>
           {{ selectedIcons }}
         </div>
@@ -100,9 +100,9 @@ export default {
     })
     
     state.iconList = getIcons()
-      state.blocksList = getBlocks()
+    state.blocksList = getBlocks()
+
     onMounted(() => {
-      
       Object.entries(state.iconList).forEach(([type, icons]) => {
         Object.keys(icons).map((name) =>
           state.blockListArr.push(`${name},${type}`)
@@ -111,13 +111,14 @@ export default {
     })
 
     const { theme, changeTheme  } = useTheme(themeCol)
+
     const switchTheme = newTheme => {
         themeCol.value = newTheme
         changeTheme()
         console.log(themeCol, theme)
     }
+    
     const addComponent = val =>  {
-      console.log('called')
       state.selectedIcons = [...state.selectedIcons, val]
     }
     
