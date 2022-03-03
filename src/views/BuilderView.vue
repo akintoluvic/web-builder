@@ -70,8 +70,8 @@
 import TopBar from "@/components/builder/TopBar.vue";
 import getIcons from "@/components/icons";
 import getBlocks from "@/components/blocks";
-// import { useTheme,  } from "@/compossable/theme";
-// import { ref } from 'vue'
+import { useTheme,  } from "@/compossable/theme";
+import { ref, reactive, toRefs, onMounted} from 'vue'
 
 
 export default {
@@ -79,10 +79,11 @@ export default {
   components: {
     TopBar,
   },
-  data() {
-    return {
-      iconList: getIcons(),
-      blocksList: getBlocks(),
+  setup() {
+    let themeCol = ref('blue')
+    let state = reactive({
+      iconList: null,
+      blocksList: null,
       blockListArr: [],
       currentTheme: 'green',
       themeList: {
@@ -96,37 +97,31 @@ export default {
       },
       theme: 'green',
       selectedIcons: [],
-    };
-  },
-  // setup() {
-  //   const state = ref('blue')
-  //   const { theme  } = useTheme()
-  //   const switchTheme = newTheme => {
-  //       // useSetTheme(newTheme)
-  //       // console.log(this.theme)
-  //       // this.theme = newTheme
-  //       console.log(state)
-  //       state.value = newTheme
-  //       console.log(state)
-  //   }
+    })
     
-  //   return { state, theme, switchTheme }
-  // },
-  methods: {
-      switchTheme(newTheme) {
-          this.theme = newTheme
-          console.log(this.theme)
-      },
-      addComponent(val) {
-        this.selectedIcons = [...this.selectedIcons, val]
-      }
-  },
-  mounted() {
-    Object.entries(this.iconList).forEach(([type, icons]) => {
-      Object.keys(icons).map((name) =>
-        this.blockListArr.push(`${name},${type}`)
-      );
-    });
+    state.iconList = getIcons()
+      state.blocksList = getBlocks()
+    onMounted(() => {
+      
+      Object.entries(state.iconList).forEach(([type, icons]) => {
+        Object.keys(icons).map((name) =>
+          state.blockListArr.push(`${name},${type}`)
+        );
+      })
+    })
+
+    const { theme, changeTheme  } = useTheme(themeCol)
+    const switchTheme = newTheme => {
+        themeCol.value = newTheme
+        changeTheme()
+        console.log(themeCol, theme)
+    }
+    const addComponent = val =>  {
+      console.log('called')
+      state.selectedIcons = [...state.selectedIcons, val]
+    }
+    
+    return {  themeCol, switchTheme, addComponent, ...toRefs(state) }
   },
 };
 </script>
