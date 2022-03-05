@@ -13,7 +13,7 @@
                 </span>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="tracking-widest text-xs title-font font-medium mb-1" :class="theme.textColor">
+                <h2 class="tracking-widest text-xs title-font font-medium mb-1" :class="textColor">
                   CATEGORY
                 </h2>
                 <h1 class="title-font text-xl font-medium text-gray-900 dark:text-white mb-3">
@@ -49,7 +49,7 @@
                 </span>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="tracking-widest text-xs title-font font-medium mb-1" :class="theme.textColor">
+                <h2 class="tracking-widest text-xs title-font font-medium mb-1" :class="textColor">
                   CATEGORY
                 </h2>
                 <h1 class="title-font text-xl font-medium text-gray-900 dark:text-white mb-3">
@@ -85,7 +85,7 @@
                 </span>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="tracking-widest text-xs title-font font-medium mb-1" :class="theme.textColor">
+                <h2 class="tracking-widest text-xs title-font font-medium mb-1" :class="textColor">
                   CATEGORY
                 </h2>
                 <h1 class="title-font text-xl font-medium text-gray-900 dark:text-white mb-3">
@@ -117,10 +117,9 @@
 <script>
 import { useTheme } from "@/compossable/theme";
 export default {
-  data() {
-    return {
-      theme: useTheme(),
-    }
-  },
+  setup() {
+    const { textColor, textBgColor, theme } = useTheme()
+    return { textColor, textBgColor, theme }
+  }
 }
 </script>

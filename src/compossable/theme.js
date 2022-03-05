@@ -1,7 +1,8 @@
 import { ref, computed } from 'vue'
+const theme = ref('blue')
 
-export function useTheme(newTheme) {
-      let theme = ref('blue')
+export function useTheme() {
+      
 
       const textColor = computed(() => {
         switch (theme.value) {
@@ -49,13 +50,9 @@ export function useTheme(newTheme) {
         }
       })
 
-      const changeTheme = () => { 
-        theme = newTheme 
+      const changeTheme = newTheme => { 
+        theme.value = newTheme 
       }
-
-      if(newTheme) changeTheme()
-
-
 
   return { theme, textColor, textBgColor, changeTheme }
 }
