@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen lg:overflow-x-hidden">
+  <div class="h-screen w-screen lg:overflow-x-hidden" :class="themeCol">
     <!-- Top Bar -->
     <TopBar />
 
