@@ -2,8 +2,7 @@ import { ref, computed } from 'vue'
 const theme = ref('blue')
 
 export function useTheme() {
-      
-
+  
       const textColor = computed(() => {
         switch (theme.value) {
           case 'red':

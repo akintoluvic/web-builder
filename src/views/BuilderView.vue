@@ -28,7 +28,7 @@
             v-for="(icon, index) in icons"
             :key="index"
             class="shadow-sm rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
-            @click="e => addComponent([index, type])"
+            @click="addComponent([index, type])"
           >
             <component :is="icon" />
           </div>
@@ -53,7 +53,7 @@
             :key="theme" 
             class="rounded-full w-4 h-4" 
             :class="theme"
-            @click="e => switchTheme(key)"
+            @click="switchTheme(key)"
             :aria-label="`select ${key} theme`"
           ></button>
         </div>
