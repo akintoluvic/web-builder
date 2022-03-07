@@ -1,8 +1,8 @@
 import { ref, computed } from 'vue'
+const theme = ref('blue')
 
 export function useTheme() {
-      const theme = ref('blue')
-
+  
       const textColor = computed(() => {
         switch (theme.value) {
           case 'red':
@@ -19,6 +19,8 @@ export function useTheme() {
             return 'text-purple-500'
           case 'pink':
             return 'text-pink-500'
+          case 'indigo':
+              return 'text-indigo-500'
             
           default:
             return `text-indigo-500`
@@ -47,8 +49,10 @@ export function useTheme() {
         }
       })
 
+      const changeTheme = newTheme => { 
+        theme.value = newTheme 
+      }
 
-
-  return { theme, textColor, textBgColor }
+  return { theme, textColor, textBgColor, changeTheme }
 }
 
