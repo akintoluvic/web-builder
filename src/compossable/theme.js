@@ -49,10 +49,32 @@ export function useTheme() {
         }
       })
 
+      const bgColor600 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'bg-red-600'
+          case 'orange':
+            return 'bg-orange-600'
+          case 'green':
+            return 'bg-green-600'
+          case 'yellow':
+            return 'bg-yellow-600'
+          case 'blue':
+            return 'bg-blue-600'
+          case 'purple':
+            return 'bg-purple-600'
+          case 'pink':
+            return 'bg-pink-600'
+            
+          default:
+            return `bg-indigo-600`
+        }
+      })
+
       const changeTheme = newTheme => { 
         theme.value = newTheme 
       }
 
-  return { theme, textColor, textBgColor, changeTheme }
+  return { theme, textColor, textBgColor, changeTheme, bgColor600 }
 }
 
