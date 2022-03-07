@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen lg:overflow-x-hidden" :class="themeCol">
+  <div class="h-screen w-screen lg:overflow-x-hidden" :class="currentTheme">
     <!-- Top Bar -->
     <TopBar />
 
@@ -45,23 +45,9 @@
       </div>
 
       <!-- customise components sidebar -->
-      <div class="w-72 flex-grow-0 bg-slate-200 py-20 px-8">
+      <!-- <div class="w-72 flex-grow-0 bg-slate-200 py-20 px-8">
         <h3 class="text-sm mb-2">Choose theme</h3>
-        <div class="w-full flex justify-between py-2 px-3 bg-slate-100 rounded-lg">
-          <button 
-            v-for="(theme, key) in themeList" 
-            :key="theme" 
-            class="rounded-full w-4 h-4" 
-            :class="theme"
-            @click="switchTheme(key)"
-            :aria-label="`select ${key} theme`"
-          ></button>
-        </div>
-        <div class="w-72 py-5">
-          <h3 class="text-sm">Customise component</h3>
-          <!-- {{ selectedIcons }} -->
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -70,9 +56,7 @@
 import TopBar from "@/components/builder/TopBar.vue";
 import getIcons from "@/components/icons";
 import getBlocks from "@/components/blocks";
-import { useTheme,  } from "@/compossable/theme";
-import { ref, reactive, toRefs, onMounted} from 'vue'
-
+import { reactive, toRefs, onMounted} from 'vue'
 
 export default {
   name: "BuilderView",
@@ -80,22 +64,10 @@ export default {
     TopBar,
   },
   setup() {
-    const themeCol = ref('blue')
     let state = reactive({
       iconList: null,
       blocksList: null,
       blockListArr: [],
-      currentTheme: 'green',
-      themeList: {
-        blue: 'bg-blue-500',
-        red: 'bg-red-500',
-        orange: 'bg-orange-500',
-        yellow: 'bg-yellow-500',
-        indigo: 'bg-indigo-500',
-        pink: 'bg-pink-500',
-        purple: 'bg-purple-500',
-      },
-      theme: 'green',
       selectedIcons: [],
     })
     
@@ -109,20 +81,12 @@ export default {
         );
       })
     })
-
-    const { theme, changeTheme  } = useTheme()
-
-    const switchTheme = newTheme => {
-        themeCol.value = newTheme
-        changeTheme(themeCol.value)
-        console.log(themeCol.value, theme.value)
-    }
     
     const addComponent = val =>  {
       state.selectedIcons = [...state.selectedIcons, val]
     }
     
-    return {  themeCol, switchTheme, addComponent, ...toRefs(state) }
+    return { addComponent, ...toRefs(state) }
   },
 };
 </script>
