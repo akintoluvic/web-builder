@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen lg:overflow-x-hidden" :class="currentTheme">
+  <div class="h-screen w-screen lg:overflow-x-hidden" :class="theme">
     <!-- Top Bar -->
     <TopBar />
 
@@ -57,6 +57,7 @@ import TopBar from "@/components/builder/TopBar.vue";
 import getIcons from "@/components/icons";
 import getBlocks from "@/components/blocks";
 import { reactive, toRefs, onMounted} from 'vue'
+import { useTheme } from "@/compossable/theme"
 
 export default {
   name: "BuilderView",
@@ -73,6 +74,7 @@ export default {
     
     state.iconList = getIcons()
     state.blocksList = getBlocks()
+    const { theme } = useTheme()
 
     onMounted(() => {
       Object.entries(state.iconList).forEach(([type, icons]) => {
@@ -86,7 +88,7 @@ export default {
       state.selectedIcons = [...state.selectedIcons, val]
     }
     
-    return { addComponent, ...toRefs(state) }
+    return { addComponent, theme, ...toRefs(state) }
   },
 };
 </script>
