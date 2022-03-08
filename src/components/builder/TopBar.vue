@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0  w-full flex items-center justify-between h-12 px-5"
+  <div class="fixed top-0 z-30 w-full flex items-center justify-between h-12 px-5"
     :class="bgColor600"
   >
       <!-- Logo & Title -->
