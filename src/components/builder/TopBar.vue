@@ -12,35 +12,40 @@
         <h1 class="text-white">DragBuilder</h1>
       </div>
 
-      <!-- Preview -->
-
-      <div class="flex items-center">
-        <h3 class="text-white mr-5">Preview</h3>
-        <button class="h-12 w-12 flex items-center justify-center p-1 hover:bg-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-        </button>
-        <button class="h-12 w-12 flex items-center justify-center p-1 hover:bg-gray-600 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-        </button>
-        <button class="h-12 w-12 flex items-center justify-center p-1 hover:bg-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </button>
-        <button class="h-12 w-12 flex items-center justify-center p-1 hover:bg-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-        </button>
-      </div>
 
       <!-- Save, publish buttons -->
-      <div class="flex space-x-5">
-        <div class="w-full flex space-x-2 justify-between py-2 px-3 bg-slate-100 rounded-lg">
+      <div class="flex space-x-5 items-center">
+        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1">
+          <svg
+            v-if="true"
+            class="h-5"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M16 18L22 12 16 6"></path>
+            <path d="M8 6L2 12 8 18"></path>
+          </svg>
+          <svg
+            v-else
+            class="h-5"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            className="css-i6dzq1"
+            viewBox="0 0 24 24"
+          >
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span class="font-light uppercase">Preview</span>
+        </button>
+        <div class="flex space-x-2 justify-between py-2 px-3 bg-slate-200 rounded-full">
           <button 
             v-for="(uiTheme, key) in themeList" 
             :key="uiTheme" 
@@ -52,8 +57,52 @@
             <span v-if="uiTheme === `bg-${currentTheme}-500`">&#10004;</span>
           </button>
         </div>
-        <button class="h-8 px-4 border border-white text-white text-sm rounded-md">Save</button>
-        <button class="h-8 px-4 bg-amber-600 text-white text-sm rounded-md">Publish</button>
+        <div class="flex space-x-1">
+        <svg
+          class="w-7 cursor-pointer" 
+          :class="viewMode === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="viewMode = 'desktop'"
+          stroke="currentColor"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <path d="M8 21h8m-4-4v4" />
+        </svg>
+        <svg
+          class="h-7 cursor-pointer" 
+          :class="viewMode === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="viewMode = 'tablet'"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+          <path d="M12 18h.01" />
+        </svg>
+
+        <svg
+          class="h-7 cursor-pointer" 
+          :class="viewMode === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="viewMode = 'mobile'"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+          <path d="M12 18h.01" />
+        </svg>
+        </div>
+
       </div>
     </div>
 </template>
@@ -76,7 +125,7 @@ export default {
         pink: 'bg-pink-500',
         purple: 'bg-purple-500',
       },
-      selectedIcons: [],
+      viewMode: 'desktop',
     })
 
     const switchTheme = newTheme => {
