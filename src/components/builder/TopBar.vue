@@ -12,6 +12,53 @@
         <h1 class="text-white">DragBuilder</h1>
       </div>
 
+              <div class="flex space-x-1">
+        <svg
+          class="w-7 cursor-pointer" 
+          :class="viewMode === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="viewMode = 'desktop'"
+          stroke="currentColor"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <path d="M8 21h8m-4-4v4" />
+        </svg>
+        <svg
+          class="h-7 cursor-pointer" 
+          :class="viewMode === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="viewMode = 'tablet'"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+          <path d="M12 18h.01" />
+        </svg>
+
+        <svg
+          class="h-7 cursor-pointer" 
+          :class="viewMode === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="viewMode = 'mobile'"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+          <path d="M12 18h.01" />
+        </svg>
+        </div>
+
+
 
       <!-- Save, publish buttons -->
       <div class="flex space-x-5 items-center">
@@ -56,51 +103,6 @@
           >
             <span v-if="uiTheme === `bg-${currentTheme}-500`">&#10004;</span>
           </button>
-        </div>
-        <div class="flex space-x-1">
-        <svg
-          class="w-7 cursor-pointer" 
-          :class="viewMode === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'desktop'"
-          stroke="currentColor"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          viewBox="0 0 24 24"
-        >
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-          <path d="M8 21h8m-4-4v4" />
-        </svg>
-        <svg
-          class="h-7 cursor-pointer" 
-          :class="viewMode === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'tablet'"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
-          <path d="M12 18h.01" />
-        </svg>
-
-        <svg
-          class="h-7 cursor-pointer" 
-          :class="viewMode === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'mobile'"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-          <path d="M12 18h.01" />
-        </svg>
         </div>
 
       </div>

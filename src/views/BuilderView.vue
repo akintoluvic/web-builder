@@ -6,28 +6,28 @@
     
     <div class="h-screen flex">
       <!-- components sidebar -->
-      <div class="w-40 flex-shrink-0 max-w-60 h-screen overflow-y-scroll bg-slate-200 py-20">
-        <h3 class="px-4">Page Sections</h3>
+      <div class="w-40 flex-shrink-0 max-w-60 h-screen overflow-y-scroll bg-slate-200 py-16">
+        <h3 class="px-4 text-sm">Page Sections</h3>
         <div class="px-2 my-5 h-32 overflow-y-scroll">
           <div 
-            class="text-xs mx-2 px-2 py-2 bg-slate-100 rounded mb-1 cursor-pointer"
+            class="text-xs mx-2 px-2 py-1 hover:bg-slate-100 rounded mb-1 cursor-pointer"
             v-for="(component, index) in selectedIcons"
             :key="index"
           >
             {{ component[0] }}
           </div>
         </div>
-        <h3 class="px-4   border-t border-gray-400">Add new section</h3>
+        <h3 class="px-4 text-sm border-t border-gray-400">Add new section</h3>
         <div
           v-for="(icons, type) in iconList"
           :key="type"
           class="mt-5 mx-2 px-2"
         >
-          <h2 class="mb-5">{{ type }}</h2>
+          <h2 class="mb-5 text-sm">{{ type }}</h2>
           <div
             v-for="(icon, index) in icons"
             :key="index"
-            class="shadow-sm rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300 cursor-pointer"
+            class="shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300 cursor-pointer"
             @click="addComponent([index, type])"
           >
             <component :is="icon" />
@@ -38,7 +38,7 @@
       <!-- design preview/code -->
       <div class="flex-auto h-screen overflow-y-scroll justify-center">
         <main class="px-8 my-12 bg-white min-h-screen">
-          <div v-for="(currentIcon, index) in selectedIcons" :key="index">
+          <div v-for="(currentIcon, index) in selectedIcons" :key="index" class="scale-90">
             <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
           </div>
         </main>
