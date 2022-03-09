@@ -116,10 +116,83 @@ export function useTheme() {
         }
       })
 
+      const focusRingColor200 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'focus:ring-red-200'
+          case 'orange':
+            return 'focus:ring-orange-200'
+          case 'green':
+            return 'focus:ring-green-200'
+          case 'yellow':
+            return 'focus:ring-yellow-200'
+          case 'blue':
+            return 'focus:ring-blue-200'
+          case 'purple':
+            return 'focus:ring-purple-200'
+          case 'pink':
+            return 'focus:ring-pink-200'
+            
+          default:
+            return `focus:ring-indigo-200`
+        }
+      })
+
+      const focusRingColor500 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'focus:ring-red-500'
+          case 'orange':
+            return 'focus:ring-orange-500'
+          case 'green':
+            return 'focus:ring-green-500'
+          case 'yellow':
+            return 'focus:ring-yellow-500'
+          case 'blue':
+            return 'focus:ring-blue-500'
+          case 'purple':
+            return 'focus:ring-purple-500'
+          case 'pink':
+            return 'focus:ring-pink-500'
+            
+          default:
+            return `focus:ring-indigo-500`
+        }
+      })
+
+      const focusRingColor900 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'focus:ring-red-900'
+          case 'orange':
+            return 'focus:ring-orange-900'
+          case 'green':
+            return 'focus:ring-green-900'
+          case 'yellow':
+            return 'focus:ring-yellow-900'
+          case 'blue':
+            return 'focus:ring-blue-900'
+          case 'purple':
+            return 'focus:ring-purple-900'
+          case 'pink':
+            return 'focus:ring-pink-900'
+            
+          default:
+            return `focus:ring-indigo-900`
+        }
+      })
+
+
       const changeTheme = newTheme => { 
         theme.value = newTheme 
       }
 
-  return { theme, textColor, textBgColor, changeTheme, bgColor600, bgColor500, borderColor500 }
+  return { 
+    theme, 
+    textColor, 
+    textBgColor, 
+    changeTheme, 
+    bgColor600, bgColor500, borderColor500, focusRingColor200, focusRingColor500, focusRingColor900,
+  }
 }
 
