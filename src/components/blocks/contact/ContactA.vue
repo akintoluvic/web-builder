@@ -5,7 +5,7 @@
           title="map"
           width="100%"
           height="100%"
-          style=" filter: 'grayscale(1) contrast(1.2) opacity(.16)'"
+          style="filter: 'grayscale(1) contrast(1.2) opacity(.16)'"
           frameBorder="0"
           marginHeight="0"
           marginWidth="0"
@@ -33,7 +33,7 @@
               id="email"
               name="email"
               class="w-full bg-white dark:bg-gray-800 rounded border border-gray-300 dark:border-gray-700 focus:ring-2 text-base outline-none text-gray-100 dark:text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              :class="` focus:${borderColor500}  focus:${focusRingColor900} dark:focus:${focusRingColor200}`"
+              :class="`${focusBorderColor500}  ${focusRingColor900} dark:${focusRingColor200}`"
             />
           </div>
           <div class="relative mb-4">
@@ -47,7 +47,7 @@
               id="message"
               name="message"
               class="w-full bg-white dark:bg-gray-800 rounded border border-gray-300 dark:border-gray-700 focus:ring-2 h-32 text-base outline-none text-gray-700 dark:text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              :class="` focus:${borderColor500}  ${focusRingColor900}`"
+              :class="`${focusBorderColor500}  ${focusRingColor900}`"
             ></textarea>
           </div>
           <button class="`text-white border-0 py-2 px-6 focus:outline-none rounded text-lg`"
@@ -67,8 +67,8 @@
 import { useTheme } from "@/compossable/theme";
 export default {
   setup() {
-    const { textColor, textBgColor, theme, bgColor600, bgColor500, borderColor500, focusRingColor500, focusRingColor200, focusRingColor900 } = useTheme()
-    return { textColor, textBgColor, theme, bgColor600, bgColor500, borderColor500, focusRingColor500, focusRingColor200, focusRingColor900 }
+    const { textColor, textBgColor, theme, bgColor600, bgColor500, borderColor500, focusRingColor500, focusRingColor200, focusRingColor900, focusBorderColor500 } = useTheme()
+    return { textColor, textBgColor, theme, bgColor600, bgColor500, borderColor500, focusRingColor500, focusRingColor200, focusRingColor900, focusBorderColor500 }
   }
 }
 </script>
