@@ -4,6 +4,8 @@ import BlogC from './blog/BlogC';
 import BlogD from './blog/BlogD';
 import BlogE from './blog/BlogE';
 
+import ContactA from './contact/ContactA';
+
 
 export default function getBlock() {
   return {
@@ -13,6 +15,9 @@ export default function getBlock() {
       BlogC: <BlogC />,
       BlogD: <BlogD />,
       BlogE: <BlogE />,
+    },
+    Contact: {
+      ContactA: <ContactA />,
     },
   }
 }

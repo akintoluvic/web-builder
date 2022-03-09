@@ -49,6 +49,28 @@ export function useTheme() {
         }
       })
 
+      const borderColor500 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'border-red-500'
+          case 'orange':
+            return 'border-orange-500'
+          case 'green':
+            return 'border-green-500'
+          case 'yellow':
+            return 'border-yellow-500'
+          case 'blue':
+            return 'border-blue-500'
+          case 'purple':
+            return 'border-purple-500'
+          case 'pink':
+            return 'border-pink-500'
+            
+          default:
+            return `border-indigo-500`
+        }
+      })
+
       const bgColor500 = computed(() => {
         switch (theme.value) {
           case 'red':
@@ -70,6 +92,7 @@ export function useTheme() {
             return `bg-indigo-500`
         }
       })
+
       
       const bgColor600 = computed(() => {
         switch (theme.value) {
@@ -97,6 +120,6 @@ export function useTheme() {
         theme.value = newTheme 
       }
 
-  return { theme, textColor, textBgColor, changeTheme, bgColor600, bgColor500 }
+  return { theme, textColor, textBgColor, changeTheme, bgColor600, bgColor500, borderColor500 }
 }
 
