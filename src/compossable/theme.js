@@ -116,6 +116,29 @@ export function useTheme() {
         }
       })
 
+      const focusBorderColor500 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'focus:border-red-500'
+          case 'orange':
+            return 'focus:border-orange-500'
+          case 'green':
+            return 'focus:border-green-500'
+          case 'yellow':
+            return 'focus:border-yellow-500'
+          case 'blue':
+            return 'focus:border-blue-500'
+          case 'purple':
+            return 'focus:border-purple-500'
+          case 'pink':
+            return 'focus:border-pink-500'
+            
+          default:
+            return `focus:border-indigo-500`
+        }
+      })
+
+
       const focusRingColor200 = computed(() => {
         switch (theme.value) {
           case 'red':
@@ -193,6 +216,7 @@ export function useTheme() {
     textBgColor, 
     changeTheme, 
     bgColor600, bgColor500, borderColor500, focusRingColor200, focusRingColor500, focusRingColor900,
+    focusBorderColor500,
   }
 }
 
