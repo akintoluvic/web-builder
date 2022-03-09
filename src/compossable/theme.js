@@ -49,6 +49,28 @@ export function useTheme() {
         }
       })
 
+      const bgColor500 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'bg-red-500'
+          case 'orange':
+            return 'bg-orange-500'
+          case 'green':
+            return 'bg-green-500'
+          case 'yellow':
+            return 'bg-yellow-500'
+          case 'blue':
+            return 'bg-blue-500'
+          case 'purple':
+            return 'bg-purple-500'
+          case 'pink':
+            return 'bg-pink-500'
+            
+          default:
+            return `bg-indigo-500`
+        }
+      })
+      
       const bgColor600 = computed(() => {
         switch (theme.value) {
           case 'red':
@@ -75,6 +97,6 @@ export function useTheme() {
         theme.value = newTheme 
       }
 
-  return { theme, textColor, textBgColor, changeTheme, bgColor600 }
+  return { theme, textColor, textBgColor, changeTheme, bgColor600, bgColor500 }
 }
 
