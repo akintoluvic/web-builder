@@ -27,10 +27,14 @@
           <div
             v-for="(icon, index) in icons"
             :key="index"
-            class="shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300 cursor-pointer"
+            class="relative shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300 cursor-pointer"
             @click="addComponent([index, type])"
+            aria-labelledby="component icon button"
           >
             <component :is="icon" />
+            <span v-if="!blocksList[type]" class="absolute inset-0 z-30 flex justify-center items-center text-xs bg-gray-200 bg-opacity-50 w-full h-full text-gray-900">
+              <span class="text-xs">Coming soon</span>
+            </span>
           </div>
         </div>
       </div>
