@@ -54,12 +54,10 @@ export default {
 
 
     const blockAvailable = (type, index) => {
-        console.log(blocksList.value[type] !== undefined && blocksList.value[type][index] !== undefined)
       return blocksList.value[type] !== undefined && blocksList.value[type][index] !== undefined
     }
 
     const addSelectComponent = val => {
-        console.log(val)
       addComponent(val)
     }
 
