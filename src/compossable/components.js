@@ -16,6 +16,10 @@ export function useComponents() {
       selectedIcons.value = [...selectedIcons.value, val]
     }
 
+    const removeComponent = val => {
+      selectedIcons.value.splice(val, 1)
+    }
+
     onMounted(() => {
         Object.entries(iconList).forEach(([type, icons]) => {
           Object.keys(icons).map((name) =>
@@ -30,5 +34,6 @@ export function useComponents() {
       blockListArr,
       selectedIcons,
       addComponent,
+      removeComponent
     }
 }
