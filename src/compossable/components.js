@@ -13,7 +13,7 @@ iconList.value = getIcons()
 export function useComponents() {
 
     const addComponent = val => {
-      selectedIcons.value = [...selectedIcons, val]
+      selectedIcons.value = [...selectedIcons.value, val]
     }
 
     onMounted(() => {
