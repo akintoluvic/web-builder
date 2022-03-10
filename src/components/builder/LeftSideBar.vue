@@ -24,7 +24,7 @@
         :key="index"
         class="relative shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
         :class="blockAvailable(type, index) ? 'cursor-pointer' : 'cursor-not-allowed'"
-        @click="blockAvailable(type, index) && addComponent([index, type])"
+        @click="blockAvailable(type, index) && addSelectComponent([index, type])"
         aria-labelledby="component icon button"
       >
         <component :is="icon" />
@@ -36,42 +36,34 @@
   </div>
 </template>
 <script>
-import getIcons from "@/components/icons"
-import getBlocks from "@/components/blocks"
-import { reactive, toRefs, onMounted} from 'vue'
 import { useTheme } from "@/compossable/theme"
+import { useComponents } from "@/compossable/components"
 
 export default {
   name: 'LeftSideBar',
   setup() {
-    const state = reactive({
-      iconList: null,
-      blocksList: null,
-      blockListArr: [],
-      selectedIcons: [],
-    })
 
-    state.iconList = getIcons()
-    state.blocksList = getBlocks()
     const { theme } = useTheme()
+    const { 
+      iconList,
+      blockListArr,
+      blocksList,
+      selectedIcons,
+      addComponent,
+    } = useComponents()
 
-    onMounted(() => {
-      Object.entries(state.iconList).forEach(([type, icons]) => {
-        Object.keys(icons).map((name) =>
-          state.blockListArr.push(`${name},${type}`)
-        );
-      })
-    })
 
     const blockAvailable = (type, index) => {
-      return state.blocksList[type] !== undefined && state.blocksList[type][index] !== undefined
+        console.log(blocksList.value[type] !== undefined && blocksList.value[type][index] !== undefined)
+      return blocksList.value[type] !== undefined && blocksList.value[type][index] !== undefined
     }
 
-    const addComponent = val => {
-      state.selectedIcons = [...state.selectedIcons, val]
+    const addSelectComponent = val => {
+        console.log(val)
+      addComponent(val)
     }
 
-    return { addComponent, theme, ...toRefs(state), blockAvailable }
+    return { addSelectComponent, theme, blockAvailable , iconList, blockListArr, blocksList, selectedIcons}
   },
 }
 </script>
