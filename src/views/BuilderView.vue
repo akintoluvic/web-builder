@@ -27,8 +27,9 @@
           <div
             v-for="(icon, index) in icons"
             :key="index"
-            class="relative shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300 cursor-pointer"
-            @click="addComponent([index, type])"
+            class="relative shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
+            :class="blockAvailable(type, index) ? 'cursor-pointer' : 'cursor-not-allowed'"
+            @click="blockAvailable(type, index) && addComponent([index, type])"
             aria-labelledby="component icon button"
           >
             <component :is="icon" />
