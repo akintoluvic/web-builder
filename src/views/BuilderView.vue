@@ -32,7 +32,7 @@
             aria-labelledby="component icon button"
           >
             <component :is="icon" />
-            <span v-if="!blocksList[type]" class="absolute inset-0 z-30 flex justify-center items-center text-xs bg-gray-200 bg-opacity-50 w-full h-full text-gray-900">
+            <span v-if="!blockAvailable(type, index)" class="absolute inset-0 z-30 flex justify-center items-center text-xs bg-gray-200 bg-opacity-50 w-full h-full text-gray-900">
               <span class="text-xs">Coming soon</span>
             </span>
           </div>
@@ -87,12 +87,16 @@ export default {
         );
       })
     })
+
+    const blockAvailable = (type, index) => {
+      return state.blocksList[type] !== undefined && state.blocksList[type][index] !== undefined
+    }
     
     const addComponent = val =>  {
       state.selectedIcons = [...state.selectedIcons, val]
     }
     
-    return { addComponent, theme, ...toRefs(state) }
+    return { addComponent, theme, ...toRefs(state), blockAvailable }
   },
 };
 </script>
