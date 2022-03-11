@@ -11,9 +11,9 @@
       <CodeOrPagePreview />
 
       <!-- customise components sidebar -->
-      <div class="w-52 flex-grow-0 bg-slate-200 py-20 px-4">
+      <!-- <div class="w-52 flex-grow-0 bg-slate-200 py-20 px-4">
         <h3 class="text-sm mb-2">Choose theme</h3>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
