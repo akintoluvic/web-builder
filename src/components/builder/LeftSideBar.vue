@@ -1,5 +1,5 @@
 <template>
-  <div class="w-40 flex-shrink-0 max-w-60 h-screen overflow-y-scroll bg-slate-200 py-16">
+  <div class="w-40 flex-shrink-0 max-w-60 h-screen overflow-y-scroll bg-slate-200 dark:bg-gray-800 py-16">
     <h3 class="px-4 text-sm">Page Sections</h3>
     <div class="px-2 my-5 h-32 overflow-y-scroll">
       <div 
@@ -21,7 +21,7 @@
       <div
         v-for="(icon, index) in icons"
         :key="index"
-        class="relative shadow-md rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
+        class="relative shadow-md dark:shadow-lg dark:drop-shadow-xl rounded mb-5 overflow-hidden hover:outline hover:outline-slate-300"
         :class="blockAvailable(type, index) ? 'cursor-pointer' : 'cursor-not-allowed'"
         @click="blockAvailable(type, index) && addSelectComponent([index, type])"
         aria-labelledby="component icon button"
