@@ -63,7 +63,7 @@
 
       <!-- Save, publish buttons -->
       <div class="flex space-x-5 items-center">
-        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1">
+        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1 cursor-not-allowed">
           <svg
             v-if="true"
             class="h-5"
