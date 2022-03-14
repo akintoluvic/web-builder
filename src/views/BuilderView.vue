@@ -1,5 +1,6 @@
 <template>
   <div class="h-screen w-screen lg:overflow-x-hidden" :class="[theme]">
+    <!--  darkMode ? 'dark dark-mode' : 'white' -->
     <!-- Top Bar -->
     <TopBar />
 
@@ -34,8 +35,8 @@ export default {
   },
   setup() {
     const { theme } = useTheme()
-    const { darkMode } = useDarkMode()
-    return { theme, darkMode }
+    const { darkMode, toggleDarkMode } = useDarkMode()
+    return { theme, darkMode, toggleDarkMode }
   },
-};
+}
 </script>
