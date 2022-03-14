@@ -15,9 +15,9 @@ export function useDarkMode() {
     }
   })
 
-  const toggleDarkMode = val => {
-    darkMode.value = val
-    localStorage.theme = val ? "dark" : "light"
+  const toggleDarkMode = () => {
+    darkMode.value = !darkMode.value
+    localStorage.theme = darkMode.value ? "dark" : "light"
   }
 
   return {
