@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-screen lg:overflow-x-hidden" :class="theme">
+  <div class="h-screen w-screen lg:overflow-x-hidden" :class="[theme, darkMode ? 'dark dark-mode' : 'white']">
     <!-- Top Bar -->
     <TopBar />
 
@@ -22,6 +22,7 @@
 import TopBar from "@/components/builder/TopBar.vue"
 import LeftSideBar from "@/components/builder/LeftSideBar.vue"
 import { useTheme } from "@/compossable/theme"
+import { useDarkMode } from "@/compossable/dark-mode"
 import CodeOrPagePreview from '@/components/builder/CodeOrPagePreview.vue'
 
 export default {
@@ -33,7 +34,8 @@ export default {
   },
   setup() {
     const { theme } = useTheme()
-    return { theme }
+    const { darkMode } = useDarkMode()
+    return { theme, darkMode }
   },
-};
+}
 </script>

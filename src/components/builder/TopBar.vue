@@ -12,7 +12,7 @@
         <h1 class="text-white">DragBuilder</h1>
       </div>
 
-              <div class="flex space-x-1">
+      <div class="flex space-x-1">
         <svg
           class="w-7 cursor-pointer" 
           :class="viewMode === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
@@ -56,13 +56,14 @@
           <rect x="5" y="2" width="13" height="20" rx="2" ry="2" />
           <path d="M12 18h.01" />
         </svg>
-        </div>
+        <button class="mode" @click="changeMode"></button>
+      </div>
 
 
 
       <!-- Save, publish buttons -->
       <div class="flex space-x-5 items-center">
-        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1">
+        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1 cursor-not-allowed">
           <svg
             v-if="true"
             class="h-5"
@@ -109,7 +110,8 @@
     </div>
 </template>
 <script>
-import { useTheme } from "@/compossable/theme";
+import { useTheme } from "@/compossable/theme"
+import { useDarkMode } from "@/compossable/dark-mode"
 import { ref, reactive, toRefs } from 'vue'
 
 export default {
@@ -117,6 +119,7 @@ export default {
   setup() {
     const currentTheme = ref('blue')
     const { bgColor600, changeTheme } = useTheme()
+    const { toggleDarkMode } = useDarkMode()
     let state = reactive({
       themeList: {
         blue: 'bg-blue-500',
@@ -135,7 +138,11 @@ export default {
         changeTheme(currentTheme.value)
     }
 
-    return { bgColor600, currentTheme, switchTheme, ...toRefs(state) }
+    const changeMode = () => {
+      toggleDarkMode()
+    }
+
+    return { bgColor600, currentTheme, switchTheme, ...toRefs(state), changeMode }
   }
 }
 </script>
