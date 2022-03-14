@@ -1,14 +1,16 @@
 <template>
-  <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center">
-    <main class="px-8 my-12 min-h-screen">
-      <template v-for="(currentIcon, index) in selectedIcons" :key="index">
+  <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center" @click="showCode">
+
+    <main class="px-8 my-12 min-h-screen" ref="codeBlock">
+      <div v-for="(currentIcon, index) in selectedIcons" :key="index">
         <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
-      </template>
+      </div>
     </main>
   </div>
 </template>
 <script>
 import { useComponents } from "@/compossable/components"
+import { ref } from "vue";
 
 export default {
   name: 'CodeOrPagePreview',
@@ -16,9 +18,15 @@ export default {
     const { 
       blocksList,
       selectedIcons,
-    } = useComponents()    
+    } = useComponents()
+
+    const codeBlock = ref(null)
     
-    return { selectedIcons, blocksList }
+    const showCode = () => {
+      console.log(codeBlock.value.innerHTML)
+    }
+    
+    return { selectedIcons, blocksList, showCode, codeBlock }
   },
 }
 </script>
