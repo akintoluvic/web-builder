@@ -62,7 +62,6 @@ export default {
     }
 
     const removeSelectComponent = val => {
-      console.log(val)
       removeComponent(val)
     }
 
