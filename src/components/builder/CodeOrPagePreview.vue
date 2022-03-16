@@ -2,7 +2,7 @@
   <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center" @click="showCode">
     <div  class="w-full h-full text-gray-900">
       <iframe 
-        class="mt-32 w-2/3 h-52 bg-blue-400"
+        class="mt-32 w-3/4 h-1/2 bg-white dark:bg-gray-900"
         title="Page preview"
         :onload="logShit"
         loading="lazy"
@@ -11,10 +11,9 @@
       >
         
       </iframe>
-      <component :is="blocksList[selectedIcons[0][1]][selectedIcons[0][0]]"  />
-      <div v-html="codeBlock?.value?.innerHTML"></div>
+      <div class="p-8"><pre>{{ codeForPreview }}</pre></div>
     </div> 
-    <main class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
+    <main class="hidde px-8 my-12 min-h-screen" ref="codeBlock">
       <div v-for="(currentIcon, index) in selectedIcons" :key="index">
         <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
       </div>
@@ -41,20 +40,60 @@ export default {
     const { darkMode } = useDarkMode()
 
     const codeBlock = ref('')
-    const codeForPreview = ref('<span>Emile</span>')
+    const codeForPreview = ref('')
     
     const showCode = () => {
-      // codeForPreview.value = codeBlock.value.innerHTML
-      console.log(typeof codeForPreview.value)
-      console.log(codeForPreview.value)
+      // codeForPreview.value = codeBlock.value
+      console.log('showcode')
     }
 
     onMounted(() => {
-        codeBlock.value = document.querySelector('main')
-      })
+        codeForPreview.value = beautifyHTML(codeBlock.value.innerHTML)
+    })
+
+    const beautifyHTML = (codeStr) => {
+      const process = (str) => {
+        let div = document.createElement('div');
+        div.innerHTML = str.trim();
+        return format(div, 0).innerHTML.trim();
+      }
+      
+      const format = (node, level) => {
+        let indentBefore = new Array(level++ + 1).join('  '),
+          indentAfter = new Array(level - 1).join('  '),
+          textNode;
+      
+        for (let i = 0; i < node.children.length; i++) {
+          textNode = document.createTextNode('\n' + indentBefore);
+          node.insertBefore(textNode, node.children[i]);
+      
+          format(node.children[i], level);
+      
+          if (node.lastElementChild === node.children[i]) {
+            textNode = document.createTextNode('\n' + indentAfter);
+            node.appendChild(textNode);
+          }
+        }
+        return node;
+      }
+      console.log('beautify', process(codeStr))
+      return process(codeStr);
+    }
 
     const lilas = computed(() => {
-        return `<span>${codeBlock.value.innerHTML}</span>`
+        return `
+          <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Page Title</title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+        </head>
+        <body class="dark dark-mode"><span>${codeBlock.value.innerHTML}</span>
+        </body>
+        </html>`
       })
     
     const logShit = () => {
@@ -69,6 +108,7 @@ export default {
       darkMode,
       logShit,
       lilas,
+      beautifyHTML,
     }
   },
 }
