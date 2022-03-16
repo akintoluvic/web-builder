@@ -63,9 +63,9 @@
 
       <!-- Save, publish buttons -->
       <div class="flex space-x-5 items-center">
-        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1 cursor-not-allowed">
+        <button class="flex w-36 text-white text-sm border border-white rounded-full px-4 py-1 cursor-pointer">
           <svg
-            v-if="true"
+            v-if="codeView"
             class="h-5"
             fill="none"
             stroke="currentColor"
@@ -91,7 +91,10 @@
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
-          <span class="font-light uppercase">Preview</span>
+          <span
+            class="font-light uppercase ml-2"
+            @click="toggleCodeView"
+          >{{ codeView ? 'Code view' : 'Preview'}}</span>
         </button>
         <div class="flex space-x-2 justify-between py-2 px-3 bg-slate-200 rounded-full">
           <button 
@@ -112,6 +115,7 @@
 <script>
 import { useTheme } from "@/compossable/theme"
 import { useDarkMode } from "@/compossable/dark-mode"
+import { useViewOrCode } from "@/compossable/view-mode"
 import { ref, reactive, toRefs } from 'vue'
 
 export default {
@@ -120,6 +124,7 @@ export default {
     const currentTheme = ref('blue')
     const { bgColor600, changeTheme } = useTheme()
     const { toggleDarkMode } = useDarkMode()
+    const { viewMode, setViewMode, codeView, toggleCodeView } = useViewOrCode()
     let state = reactive({
       themeList: {
         blue: 'bg-blue-500',
@@ -142,7 +147,17 @@ export default {
       toggleDarkMode()
     }
 
-    return { bgColor600, currentTheme, switchTheme, ...toRefs(state), changeMode }
+    return { 
+      bgColor600,
+      currentTheme,
+      switchTheme, 
+      ...toRefs(state),
+      changeMode,
+      viewMode,
+      codeView,
+      setViewMode,
+      toggleCodeView,
+    }
   }
 }
 </script>
