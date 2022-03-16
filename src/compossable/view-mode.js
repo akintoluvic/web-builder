@@ -9,6 +9,7 @@ export function useViewOrCode() {
 
   const setViewType = value => {
     viewType.value = value
+    codeView.value = false
   }
 
   const toggleCodeView = () => {
