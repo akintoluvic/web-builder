@@ -15,8 +15,8 @@
       <div class="flex space-x-1">
         <svg
           class="w-7 cursor-pointer" 
-          :class="viewMode === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'desktop'"
+          :class="viewType === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="setViewType('desktop')"
           stroke="currentColor"
           strokeWidth="2"
           fill="none"
@@ -29,8 +29,8 @@
         </svg>
         <svg
           class="h-7 cursor-pointer" 
-          :class="viewMode === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'tablet'"
+          :class="viewType === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="setViewType('tablet')"
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="2"
@@ -44,8 +44,8 @@
 
         <svg
           class="h-7 cursor-pointer" 
-          :class="viewMode === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'mobile'"
+          :class="viewType === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="setViewType('mobile')"
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="2"
@@ -124,7 +124,7 @@ export default {
     const currentTheme = ref('blue')
     const { bgColor600, changeTheme } = useTheme()
     const { toggleDarkMode } = useDarkMode()
-    const { viewMode, setViewMode, codeView, toggleCodeView } = useViewOrCode()
+    const { viewType, setViewType, codeView, toggleCodeView } = useViewOrCode()
     let state = reactive({
       themeList: {
         blue: 'bg-blue-500',
@@ -135,13 +135,13 @@ export default {
         pink: 'bg-pink-500',
         purple: 'bg-purple-500',
       },
-      viewMode: 'desktop',
     })
 
     const switchTheme = newTheme => {
         currentTheme.value = newTheme
         changeTheme(currentTheme.value)
     }
+
 
     const changeMode = () => {
       toggleDarkMode()
@@ -153,9 +153,9 @@ export default {
       switchTheme, 
       ...toRefs(state),
       changeMode,
-      viewMode,
+      viewType,
       codeView,
-      setViewMode,
+      setViewType,
       toggleCodeView,
     }
   }
