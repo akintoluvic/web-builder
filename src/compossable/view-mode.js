@@ -1,10 +1,20 @@
-import { ref, onMounted } from "vue"
+import { ref, computed } from "vue"
 const viewType = ref('desktop')
 const codeView = ref(false)
 
 export function useViewOrCode() {
-  onMounted(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  const viewWidth = computed(() => {
+    switch (viewType.value) {
+      case 'desktop':
+        return 'w-full'
+      case 'tablet':
+        return 'max-w-lg w-full'
+      case 'mobile':
+        return 'max-w-sm w-full'
+        
+      default:
+        return `w-full`
+    }
   })
 
   const setViewType = value => {
@@ -21,5 +31,6 @@ export function useViewOrCode() {
     toggleCodeView,
     codeView,
     viewType,
+    viewWidth
   }
 }

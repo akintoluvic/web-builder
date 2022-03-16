@@ -4,16 +4,14 @@
       <div v-if="codeView" class="p-8"><pre>{{ codeForPreview }}</pre></div>
       <iframe 
         v-else
-        class="w-full h-full bg-white dark:bg-gray-900"
+        class="h-full bg-white dark:bg-gray-900 mx-auto"
+        :class="viewWidth"
         title="Page preview"
         :onload="logShit"
         loading="lazy"
         :name="lalac"
         :srcdoc="lilas"
-      >
-        
-      </iframe>
-      
+      />
     </div> 
     <main class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
       <div v-for="(currentIcon, index) in selectedIcons" :key="index">
@@ -41,7 +39,7 @@ export default {
       selectedIcons,
     } = useComponents()
     const { darkMode } = useDarkMode()
-    const { viewType, codeView, } = useViewOrCode()
+    const { viewWidth, codeView, } = useViewOrCode()
 
     const codeBlock = ref('')
     const codeForPreview = ref('')
@@ -113,7 +111,7 @@ export default {
       logShit,
       lilas,
       beautifyHTML,
-      viewType,
+      viewWidth,
       codeView,
     }
   },
