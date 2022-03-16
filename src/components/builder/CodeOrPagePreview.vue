@@ -1,8 +1,10 @@
 <template>
   <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center" @click="showCode">
-    <div  class="w-full h-full text-gray-900">
+    <div  class="w-full h-full text-gray-900 mt-32">
+      <div v-if="codeView" class="p-8"><pre>{{ codeForPreview }}</pre></div>
       <iframe 
-        class="mt-32 w-3/4 h-1/2 bg-white dark:bg-gray-900"
+        v-else
+        class="w-full h-full bg-white dark:bg-gray-900"
         title="Page preview"
         :onload="logShit"
         loading="lazy"
@@ -11,9 +13,9 @@
       >
         
       </iframe>
-      <div class="p-8"><pre>{{ codeForPreview }}</pre></div>
+      
     </div> 
-    <main class="hidde px-8 my-12 min-h-screen" ref="codeBlock">
+    <main class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
       <div v-for="(currentIcon, index) in selectedIcons" :key="index">
         <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
       </div>
@@ -23,6 +25,7 @@
 <script>
 import { useComponents } from "@/compossable/components"
 import { useDarkMode } from "@/compossable/dark-mode"
+import { useViewOrCode } from "@/compossable/view-mode"
 import { ref, onMounted, computed } from "vue";
 
 export default {
@@ -38,6 +41,7 @@ export default {
       selectedIcons,
     } = useComponents()
     const { darkMode } = useDarkMode()
+    const { viewType, codeView, } = useViewOrCode()
 
     const codeBlock = ref('')
     const codeForPreview = ref('')
@@ -109,6 +113,8 @@ export default {
       logShit,
       lilas,
       beautifyHTML,
+      viewType,
+      codeView,
     }
   },
 }
