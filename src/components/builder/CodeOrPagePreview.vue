@@ -1,19 +1,10 @@
 <template>
-  <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center" @click="showCode">
+  <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center">
     <div  class="w-full h-full text-gray-900 mt-32">
-      <div v-if="codeView" class="p-8"><pre>{{ codeForPreview }}</pre></div>
-      <iframe 
-        v-else
-        class="h-full bg-white dark:bg-gray-900 mx-auto"
-        :class="viewWidth"
-        title="Page preview"
-        :onload="logShit"
-        loading="lazy"
-        :name="lalac"
-        :srcdoc="lilas"
-      />
+      <div v-if="codeView" class="p-8"><pre>{{ codeForView }}</pre></div>
+      <IframeView v-else :code="codeForPreview" />
     </div> 
-    <main class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
+    <main  class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
       <div v-for="(currentIcon, index) in selectedIcons" :key="index">
         <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
       </div>
@@ -24,14 +15,13 @@
 import { useComponents } from "@/compossable/components"
 import { useDarkMode } from "@/compossable/dark-mode"
 import { useViewOrCode } from "@/compossable/view-mode"
-import { ref, onMounted, computed } from "vue";
+import { ref, computed,   } from "vue";
+import IframeView from "@/components/builder/IframeView";
 
 export default {
   name: 'CodeOrPagePreview',
-  data() {
-    return {
-      asee: "Weret",
-    }
+  components: {
+    IframeView,
   },
   setup() {
     const { 
@@ -42,16 +32,7 @@ export default {
     const { viewWidth, codeView, } = useViewOrCode()
 
     const codeBlock = ref('')
-    const codeForPreview = ref('')
     
-    const showCode = () => {
-      // codeForPreview.value = codeBlock.value
-      console.log('showcode')
-    }
-
-    onMounted(() => {
-        codeForPreview.value = beautifyHTML(codeBlock.value.innerHTML)
-    })
 
     const beautifyHTML = (codeStr) => {
       const process = (str) => {
@@ -78,11 +59,10 @@ export default {
         }
         return node;
       }
-      console.log('beautify', process(codeStr))
       return process(codeStr);
     }
 
-    const lilas = computed(() => {
+    const codeForPreview = computed(() => {
         return `
           <!DOCTYPE html>
         <html>
@@ -97,20 +77,35 @@ export default {
         </body>
         </html>`
       })
+
+    const codeForView = computed(() => beautifyHTML(codeForPreview.value))
+
+    // const codeForViewAndPreview = () => {
+    //   codeForView.value = beautifyHTML(codeForPreview)
+    //   console.log('codeForViewAndPreview', codeForView.value)
+    // }
     
-    const logShit = () => {
-      console.log('Hmmm', showCode())
-    }
+
+    // onMounted(() => {
+    //   // codeForViewAndPreview()
+    //   iframe.value.contentWindow.document.write(codeForPreview.value)
+    // })
+
+    // watch(() => selectedIcons.value, () => {
+    //   codeForViewAndPreview()
+        
+    //   console.log('iframe updated', codeForView.value)
+    // })
+
+    
+    
     return {
       selectedIcons,
       blocksList,
-      showCode,
+      codeForView,
       codeForPreview,
       codeBlock,
       darkMode,
-      logShit,
-      lilas,
-      beautifyHTML,
       viewWidth,
       codeView,
     }
