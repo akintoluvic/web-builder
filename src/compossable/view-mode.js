@@ -8,7 +8,7 @@ export function useViewOrCode() {
       case 'desktop':
         return 'w-full'
       case 'tablet':
-        return 'max-w-lg w-full'
+        return 'max-w-2xl w-full'
       case 'mobile':
         return 'max-w-sm w-full'
         
