@@ -10,7 +10,7 @@
 </template>
 <script>
 import { useViewOrCode } from "@/compossable/view-mode"
-import { toRefs, onMounted, ref,  } from "vue"
+import { toRefs, onMounted, ref, onUnmounted  } from "vue"
 
 export default {
   name: 'IframeView',
@@ -27,12 +27,17 @@ export default {
     
     const displayContent = () => {
         iframe.value.contentWindow.document.write(code.value)
+        iframe.value.contentWindow.document.close()
     }
-
-    console.log(code, 'codeForView')
 
     onMounted(() => {
       displayContent()
+      console.log('mounted')
+    })
+
+    onUnmounted(() => {
+    //   iframe.value.contentWindow.document.body.innerHTML = ''
+      console.log('destroyed')
     })
 
     const logShit = () => {
