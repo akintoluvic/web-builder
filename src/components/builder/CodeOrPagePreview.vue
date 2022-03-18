@@ -1,13 +1,20 @@
 <template>
   <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center">
-    <div  class="w-full h-full text-gray-900 mt-32">
-      <div v-if="codeView" class="p-8"><pre>{{ codeForView }}</pre></div>
+    <div  class="w-full h-full text-gray-900 mt-20">
+      <div v-if="codeView" class="p-8">
+        <pre>{{ codeForView }}</pre>
+      </div>
+      <main v-else-if="viewWidth === 'w-full'" class="hidde px-8 mb-12 min-h-screen">
+        <template v-for="(currentIcon, index) in selectedIcons" :key="index">
+          <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
+        </template>
+      </main>
       <IframeView v-else :code="codeForPreview" />
     </div> 
-    <main  class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
-      <div v-for="(currentIcon, index) in selectedIcons" :key="index">
+    <main class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
+      <template v-for="(currentIcon, index) in selectedIcons" :key="index">
         <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
-      </div>
+      </template>
     </main>
   </div>
 </template>
@@ -15,7 +22,7 @@
 import { useComponents } from "@/compossable/components"
 import { useDarkMode } from "@/compossable/dark-mode"
 import { useViewOrCode } from "@/compossable/view-mode"
-import { ref, computed,   } from "vue";
+import { ref, watch, onMounted } from "vue";
 import IframeView from "@/components/builder/IframeView";
 
 export default {
@@ -32,6 +39,8 @@ export default {
     const { viewWidth, codeView, } = useViewOrCode()
 
     const codeBlock = ref('')
+    const codeForView = ref('')
+    const codeForPreview = ref('')
     
 
     const beautifyHTML = (codeStr) => {
@@ -62,42 +71,39 @@ export default {
       return process(codeStr);
     }
 
-    const codeForPreview = computed(() => {
-        return `
-          <!DOCTYPE html>
+    const generateCodeForPreview = () => {
+      console.log('generateCodeForPreview')
+      codeForPreview.value = `
+        <!DOCTYPE html>
         <html>
         <head>
         <title>Page Title</title>
         <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
         </head>
-        <body class="dark dark-mode"><span>${codeBlock.value.innerHTML}</span>
+        <body class="dark dark-mode">
+          ${codeBlock.value.innerHTML}
         </body>
-        </html>`
-      })
+        </html>
+      `
 
-    const codeForView = computed(() => beautifyHTML(codeForPreview.value))
+      codeForView.value = beautifyHTML(codeBlock.value.innerHTML)
+    }
 
-    // const codeForViewAndPreview = () => {
-    //   codeForView.value = beautifyHTML(codeForPreview)
-    //   console.log('codeForViewAndPreview', codeForView.value)
-    // }
-    
+    onMounted(() => {
+      generateCodeForPreview()
+    })
 
-    // onMounted(() => {
-    //   // codeForViewAndPreview()
-    //   iframe.value.contentWindow.document.write(codeForPreview.value)
-    // })
+    watch(() => selectedIcons.value, () => {        
+      setTimeout(() => {
+        generateCodeForPreview()
+      }, 200);
+    },
+    { deep: true }
+    )
 
-    // watch(() => selectedIcons.value, () => {
-    //   codeForViewAndPreview()
-        
-    //   console.log('iframe updated', codeForView.value)
-    // })
-
-    
     
     return {
       selectedIcons,
