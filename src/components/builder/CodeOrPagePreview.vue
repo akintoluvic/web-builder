@@ -21,6 +21,7 @@
 <script>
 import { useComponents } from "@/compossable/components"
 import { useDarkMode } from "@/compossable/dark-mode"
+import { useTheme } from "@/compossable/theme"
 import { useViewOrCode } from "@/compossable/view-mode"
 import { ref, watch, onMounted } from "vue";
 import IframeView from "@/components/builder/IframeView";
@@ -37,6 +38,7 @@ export default {
     } = useComponents()
     const { darkMode } = useDarkMode()
     const { viewWidth, codeView, } = useViewOrCode()
+    const { theme } = useTheme()
 
     const codeBlock = ref('')
     const codeForView = ref('')
@@ -96,14 +98,13 @@ export default {
       generateCodeForPreview()
     })
 
-    watch(() => selectedIcons.value, () => {        
+    watch([() => theme.value, () => selectedIcons.value], () => {        
       setTimeout(() => {
         generateCodeForPreview()
       }, 200);
-    },
-    { deep: true }
+      },
+      { deep: true }
     )
-
     
     return {
       selectedIcons,
