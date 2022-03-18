@@ -1,5 +1,7 @@
 <template>
   <div class="w-40 flex-shrink-0 max-w-60 h-screen overflow-y-scroll bg-slate-200 dark:bg-gray-800 py-16">
+    
+    <!-- Selected components -->
     <h3 class="px-4 text-sm text-slate-600 dark:text-slate-500">Page Sections</h3>
     <div class="px-2 my-5 h-32 overflow-y-scroll">
       <div 
@@ -9,27 +11,14 @@
         draggable="true"
         @dragstart="handleDragStart(component, index)"
         @dragover.prevent
-        @drop="handleDrop(component, index)"
+        @drop="handleDrop(index)"
       >
         <span>{{ component[0] }}</span>
         <svg @click="removeSelectComponent(index)" class="w-3 h-3 cursor-pointer hover:bg-slate-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
       </div>
-
-        <!-- @dragstart=""
-        @dragleave=""
-        @dragover=""
-        @drop=""
-
-          
-          'drag-start': handleDragStart, 
-          'drag-over':handleDragOver, 
-          'drag-enter': handleDragEnter, 
-          'drag-leave': handleDragLeave, 
-          'drag-end': handleDragEnd, 
-          'drop': handleDrop, 
-          'drag': handleDrag -->
-
     </div>
+
+    <!-- Icon list -->
     <h3 class="px-4 pt-3 text-sm text-slate-600 dark:text-slate-500 border-t border-gray-300 dark:border-gray-700">Add section</h3>
     <div
       v-for="(icons, type) in iconList"
@@ -62,7 +51,6 @@ export default {
   name: 'LeftSideBar',
   setup() {
     const dragStartItem = ref(null)
-    const dragEndItem = ref(null)
     const { theme } = useTheme()
     const { 
       iconList,
@@ -87,44 +75,15 @@ export default {
     }
 
     const handleDragStart = ( startElem, startIndex) => {
-        
-        dragStartItem.value = [startElem, startIndex]
-        console.log('handleDragStart', dragStartItem.value)
-      }
-    const handleDragOver = () => {}
+      dragStartItem.value = [startElem, startIndex]
+    }
       
-    const handleDrop = ( dropElem, dropIndex) => {
-
-        dragEndItem.value = [dropElem, dropIndex]
-        console.log('handleDrop', dragEndItem.value)
-
-        let tempArr = [...selectedIcons.value]
-        tempArr.splice(dragStartItem.value[1], 1)
-        tempArr.splice(dropIndex, 0, dragStartItem.value[0])
-        selectedIcons.value = tempArr
-
-        // this.loggedEvent = 'handleDrop';
-        // this.tasks[itemOne.id] = this.tasks.splice(itemTwo.id, 1, this.tasks[itemOne.id])[0]
-      }
-
-
-    const handleDragEnter = elem => {
-        console.log('handleDragEnter', elem);
-        this.loggedEvent = 'handleDragEnter';
-      }
-    const handleDragLeave = elem => {
-        console.log('handleDragLeave', elem);
-        this.loggedEvent = 'handleDragLeave';
-      }
-    const handleDragEnd = elem => {
-        console.log('handleDragEnd', elem);
-        this.loggedEvent = 'handleDragEnd';
-      }
-    
-      const handleDrag = elem => {
-          console.log('handleDrag', elem);
-          this.loggedEvent = 'handleDrag';
-      }
+    const handleDrop = dropIndex => {
+      let tempArr = [...selectedIcons.value]
+      tempArr.splice(dragStartItem.value[1], 1)
+      tempArr.splice(dropIndex, 0, dragStartItem.value[0])
+      selectedIcons.value = tempArr
+    }
 
     return { 
         addSelectComponent,
@@ -137,15 +96,7 @@ export default {
         selectedIcons,
 
         handleDragStart,
-        handleDragOver,
-        handleDragEnter,
-        handleDragLeave,
-        handleDragEnd,
         handleDrop,
-        handleDrag,
-
-        dragStartItem,
-        dragEndItem,
     }
   },
 }
