@@ -74,7 +74,6 @@ export default {
     }
 
     const generateCodeForPreview = () => {
-      console.log('generateCodeForPreview')
       codeForPreview.value = `
         <!DOCTYPE html>
         <html>
@@ -90,7 +89,6 @@ export default {
         </body>
         </html>
       `
-
       codeForView.value = beautifyHTML(codeBlock.value.innerHTML)
     }
 
@@ -101,7 +99,7 @@ export default {
     watch([() => theme.value, () => selectedIcons.value], () => {        
       setTimeout(() => {
         generateCodeForPreview()
-      }, 200);
+      }, 100);
       },
       { deep: true }
     )
