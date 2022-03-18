@@ -7,9 +7,9 @@
         v-for="(component, index) in selectedIcons"
         :key="index"
         draggable="true"
-        @dragstart="handleDragStart"
-        @dragover.prevent="handleDragOver"
-        @drop="handleDrop"
+        @dragstart="handleDragStart(component, index)"
+        @dragover.prevent
+        @drop="handleDrop(component, index)"
       >
         <span>{{ component[0] }}</span>
         <svg @click="removeSelectComponent(index)" class="w-3 h-3 cursor-pointer hover:bg-slate-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -27,7 +27,7 @@
           'drag-leave': handleDragLeave, 
           'drag-end': handleDragEnd, 
           'drop': handleDrop, 
-          'drag': handleDrag}" -->
+          'drag': handleDrag -->
 
     </div>
     <h3 class="px-4 pt-3 text-sm text-slate-600 dark:text-slate-500 border-t border-gray-300 dark:border-gray-700">Add section</h3>
@@ -56,11 +56,13 @@
 <script>
 import { useTheme } from "@/compossable/theme"
 import { useComponents } from "@/compossable/components"
+import { ref } from 'vue'
 
 export default {
   name: 'LeftSideBar',
   setup() {
-
+    const dragStartItem = ref(null)
+    const dragEndItem = ref(null)
     const { theme } = useTheme()
     const { 
       iconList,
@@ -84,17 +86,20 @@ export default {
       removeComponent(val)
     }
 
-    const handleDragStart = elem => {
-        console.log('handleDragStart', elem);
-        // this.loggedEvent = 'handleDragStart';
+    const handleDragStart = ( startElem, startIndex) => {
+        
+        dragStartItem.value = [startElem, startIndex]
+        console.log('handleDragStart', dragStartItem.value)
       }
-    const handleDragOver = elem => {
-        console.log('handleDragOver', elem);
-        // this.loggedEvent = 'handleDragOver';
-      }
+    const handleDragOver = () => {}
       
-    const handleDrop = ( itemOne, itemTwo) => {
-        console.log('handleDrop', itemOne, itemTwo);
+    const handleDrop = ( dropElem, dropIndex) => {
+
+        dragEndItem.value = [dropElem, dropIndex]
+        console.log('handleDrop', dragEndItem.value)
+
+        // let tempArr = [...selectedIcons.value]
+        // tempArr.splice(itemTwo, 1)
         // this.loggedEvent = 'handleDrop';
         // this.tasks[itemOne.id] = this.tasks.splice(itemTwo.id, 1, this.tasks[itemOne.id])[0]
       }
@@ -135,6 +140,9 @@ export default {
         handleDragEnd,
         handleDrop,
         handleDrag,
+
+        dragStartItem,
+        dragEndItem,
     }
   },
 }
