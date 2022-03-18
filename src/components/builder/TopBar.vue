@@ -15,8 +15,8 @@
       <div class="flex space-x-1">
         <svg
           class="w-7 cursor-pointer" 
-          :class="viewMode === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'desktop'"
+          :class="viewType === 'desktop' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="setViewType('desktop')"
           stroke="currentColor"
           strokeWidth="2"
           fill="none"
@@ -29,8 +29,8 @@
         </svg>
         <svg
           class="h-7 cursor-pointer" 
-          :class="viewMode === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'tablet'"
+          :class="viewType === 'tablet' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="setViewType('tablet')"
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="2"
@@ -44,8 +44,8 @@
 
         <svg
           class="h-7 cursor-pointer" 
-          :class="viewMode === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
-          @click="viewMode = 'mobile'"
+          :class="viewType === 'mobile' ? 'stroke-white' : 'stroke-slate-400'" 
+          @click="setViewType('mobile')"
           viewBox="0 0 24 24"
           stroke="currentColor"
           strokeWidth="2"
@@ -63,9 +63,9 @@
 
       <!-- Save, publish buttons -->
       <div class="flex space-x-5 items-center">
-        <button class="flex space-x-2 text-white text-sm border border-white rounded-full px-5 py-1 cursor-not-allowed">
+        <button class="flex w-36 text-white text-sm border border-white rounded-full px-4 py-1 cursor-pointer">
           <svg
-            v-if="true"
+            v-if="codeView"
             class="h-5"
             fill="none"
             stroke="currentColor"
@@ -91,7 +91,10 @@
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
-          <span class="font-light uppercase">Preview</span>
+          <span
+            class="font-light uppercase ml-2"
+            @click="toggleCodeView"
+          >{{ codeView ? 'Code view' : 'Preview'}}</span>
         </button>
         <div class="flex space-x-2 justify-between py-2 px-3 bg-slate-200 rounded-full">
           <button 
@@ -112,6 +115,7 @@
 <script>
 import { useTheme } from "@/compossable/theme"
 import { useDarkMode } from "@/compossable/dark-mode"
+import { useViewOrCode } from "@/compossable/view-mode"
 import { ref, reactive, toRefs } from 'vue'
 
 export default {
@@ -120,6 +124,7 @@ export default {
     const currentTheme = ref('blue')
     const { bgColor600, changeTheme } = useTheme()
     const { toggleDarkMode } = useDarkMode()
+    const { viewType, setViewType, codeView, toggleCodeView } = useViewOrCode()
     let state = reactive({
       themeList: {
         blue: 'bg-blue-500',
@@ -130,7 +135,6 @@ export default {
         pink: 'bg-pink-500',
         purple: 'bg-purple-500',
       },
-      viewMode: 'desktop',
     })
 
     const switchTheme = newTheme => {
@@ -138,11 +142,22 @@ export default {
         changeTheme(currentTheme.value)
     }
 
+
     const changeMode = () => {
       toggleDarkMode()
     }
 
-    return { bgColor600, currentTheme, switchTheme, ...toRefs(state), changeMode }
+    return { 
+      bgColor600,
+      currentTheme,
+      switchTheme, 
+      ...toRefs(state),
+      changeMode,
+      viewType,
+      codeView,
+      setViewType,
+      toggleCodeView,
+    }
   }
 }
 </script>
