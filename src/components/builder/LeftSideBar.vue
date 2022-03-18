@@ -98,8 +98,11 @@ export default {
         dragEndItem.value = [dropElem, dropIndex]
         console.log('handleDrop', dragEndItem.value)
 
-        // let tempArr = [...selectedIcons.value]
-        // tempArr.splice(itemTwo, 1)
+        let tempArr = [...selectedIcons.value]
+        tempArr.splice(dragStartItem.value[1], 1)
+        tempArr.splice(dropIndex, 0, dragStartItem.value[0])
+        selectedIcons.value = tempArr
+
         // this.loggedEvent = 'handleDrop';
         // this.tasks[itemOne.id] = this.tasks.splice(itemTwo.id, 1, this.tasks[itemOne.id])[0]
       }
