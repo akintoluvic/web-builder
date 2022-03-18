@@ -22,9 +22,6 @@ export default {
     const { viewWidth, codeView, } = useViewOrCode()
     const iframe = ref('')
 
-    // computed property that auto-updates when the prop changes
-    // const normalizedSize = computed(() => props.size.trim().toLowerCase())
-    
     const displayContent = () => {
         iframe.value.contentWindow.document.write(code.value)
         iframe.value.contentWindow.document.close()
@@ -36,20 +33,12 @@ export default {
     })
 
     onUnmounted(() => {
-    //   iframe.value.contentWindow.document.body.innerHTML = ''
       console.log('destroyed')
     })
 
     const logShit = () => {
       console.log('Hmmm, what iFrame doing here?')
     }
-
-
-    // watch(codeForView, () => {
-    //   displayContent(codeForView)
-        
-    //   console.log('iframe updated', codeForView.value)
-    // })
 
     return {
       viewWidth,
