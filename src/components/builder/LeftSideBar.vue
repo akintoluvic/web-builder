@@ -35,7 +35,7 @@
         aria-labelledby="component icon button"
       >
         <component :is="icon" class="text-gray-400" />
-        <span v-if="!blockAvailable(type, index)" class="absolute inset-0 z-30 flex justify-center items-center text-xs bg-gray-200  bg-opacity-60 dark:bg-opacity-30 w-full h-full text-gray-900 dark:text-gray-300">
+        <span v-if="!blockAvailable(type, index)" class="absolute inset-0 z-10 flex justify-center items-center text-xs bg-gray-200  bg-opacity-60 dark:bg-opacity-30 w-full h-full text-gray-900 dark:text-gray-300">
           <span class="text-xs">Coming soon</span>
         </span>
       </div>
