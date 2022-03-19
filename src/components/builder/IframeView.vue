@@ -1,13 +1,13 @@
 <template>
   <div 
-    class="h-ful overflow-y-scroll py-14 bg-slate-200 border-2 border-slate-300 mx-auto rounded-3xl"
-    :class="[deviceViewWidth]" 
+    class="overflow-y-scroll py-14 bg-slate-200 border-2 border-slate-300 mx-auto rounded-3xl"
+    :class="[deviceViewWidth, viewType === 'mobile' ? '' : 'h-full' ]" 
   >
     <iframe 
         ref="iframe"
         id="iframe"
-        class="h-full bg-white mx-auto dark:bg-gray-900 border-2 border-slate-300"
-        :class="[iframeViewWidth, ]"
+        class=" bg-white mx-auto dark:bg-gray-900 border-2 border-slate-300"
+        :class="[iframeViewWidth, viewType === 'mobile' ? 'mobile-height' : 'h-full']"
         title="Page components preview"
         loading="lazy"
         name="Page components preview"
@@ -25,7 +25,7 @@ export default {
   },
   setup(props) {
     const { code } = toRefs(props)
-    const { viewWidth, codeView, deviceViewWidth, iframeViewWidth } = useViewOrCode()
+    const { viewWidth, codeView, deviceViewWidth, iframeViewWidth, viewType } = useViewOrCode()
     const iframe = ref('')
 
     const displayContent = () => {
@@ -50,7 +50,13 @@ export default {
       logShit,
       deviceViewWidth,
       iframeViewWidth,
+      viewType,
     }
   }
 }
 </script>
+<style>
+.mobile-height {
+  height: 812px;
+}
+</style>

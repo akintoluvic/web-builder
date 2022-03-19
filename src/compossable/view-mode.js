@@ -10,7 +10,7 @@ export function useViewOrCode() {
       case 'tablet':
         return 'max-w-3xl w-full'
       case 'mobile':
-        return 'max-w-lg w-full'
+        return 'max-w-md w-full'
         
       default:
         return `w-full`
@@ -24,7 +24,7 @@ export function useViewOrCode() {
       case 'tablet':
         return 'max-w-4xl w-full'
       case 'mobile':
-        return 'max-w-xl w-full'
+        return 'max-w-lg w-full'
         
       default:
         return `w-full`
