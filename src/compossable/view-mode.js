@@ -3,14 +3,28 @@ const viewType = ref('desktop')
 const codeView = ref(false)
 
 export function useViewOrCode() {
-  const viewWidth = computed(() => {
+  const iframeViewWidth = computed(() => {
     switch (viewType.value) {
       case 'desktop':
         return 'w-full'
       case 'tablet':
-        return 'max-w-2xl w-full'
+        return 'max-w-3xl w-full'
       case 'mobile':
-        return 'max-w-sm w-full'
+        return 'max-w-lg w-full'
+        
+      default:
+        return `w-full`
+    }
+  })
+
+  const deviceViewWidth = computed(() => {
+    switch (viewType.value) {
+      case 'desktop':
+        return 'w-full'
+      case 'tablet':
+        return 'max-w-4xl w-full'
+      case 'mobile':
+        return 'max-w-xl w-full'
         
       default:
         return `w-full`
@@ -31,6 +45,7 @@ export function useViewOrCode() {
     toggleCodeView,
     codeView,
     viewType,
-    viewWidth
+    iframeViewWidth,
+    deviceViewWidth,
   }
 }
