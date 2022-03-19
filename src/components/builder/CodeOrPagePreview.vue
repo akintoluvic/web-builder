@@ -1,8 +1,9 @@
 <template>
   <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center">
     <div  class="w-full h-full text-gray-900 mt-20">
-      <div v-if="codeView" class="p-8">
-        <pre>{{ codeForView }}</pre>
+      <div v-if="codeView" class="m-8 max-w-max rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500">
+        <div class="w-full h-12 bg-slate-300 dark:bg-slate-700 rounded-t-lg"></div>
+        <pre class="w-full p-4 overflow-scroll">{{ codeForView }}</pre>
       </div>
       <main v-else-if="viewWidth === 'w-full'" class="hidde px-8 mb-12 min-h-screen">
         <template v-for="(currentIcon, index) in selectedIcons" :key="index">
