@@ -29,12 +29,9 @@ export default {
 
     onMounted(() => {
       displayContent()
-      console.log('mounted')
     })
 
-    onUnmounted(() => {
-      console.log('destroyed')
-    })
+    onUnmounted(() => {})
 
     const logShit = () => {
       console.log('Hmmm, what iFrame doing here?')
