@@ -10,7 +10,7 @@
         </div>
         <pre class="w-full h-full p-4 overflow-y-scroll">{{ codeForView }}</pre>
       </div>
-      <main v-else-if="viewWidth === 'w-full'" class="px-8 mb-12 min-h-screen">
+      <main v-else-if="deviceViewWidth === 'w-full'" class="px-8 mb-12 min-h-screen">
         <template v-for="(currentIcon, index) in selectedIcons" :key="index">
           <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
         </template>
@@ -43,7 +43,7 @@ export default {
       selectedIcons,
     } = useComponents()
     const { darkMode } = useDarkMode()
-    const { viewWidth, codeView, } = useViewOrCode()
+    const { deviceViewWidth, codeView, } = useViewOrCode()
     const { theme } = useTheme()
 
     const codeBlock = ref('')
@@ -126,7 +126,7 @@ export default {
       codeForPreview,
       codeBlock,
       darkMode,
-      viewWidth,
+      deviceViewWidth,
       codeView,
       copyToClipboard,
       copyButtonText,

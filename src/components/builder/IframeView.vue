@@ -1,12 +1,18 @@
 <template>
-  <iframe 
+  <div 
+    class="h-ful overflow-y-scroll py-14 bg-slate-200 border-2 border-slate-300 mx-auto rounded-3xl"
+    :class="[deviceViewWidth]" 
+  >
+    <iframe 
         ref="iframe"
-        class="h-full bg-white dark:bg-gray-900 mx-auto border-2 border-slate-200"
-        :class="[viewWidth, ]"
+        id="iframe"
+        class="h-full bg-white mx-auto dark:bg-gray-900 border-2 border-slate-300"
+        :class="[iframeViewWidth, ]"
         title="Page components preview"
         loading="lazy"
         name="Page components preview"
       />
+  </div>
 </template>
 <script>
 import { useViewOrCode } from "@/compossable/view-mode"
@@ -19,7 +25,7 @@ export default {
   },
   setup(props) {
     const { code } = toRefs(props)
-    const { viewWidth, codeView, } = useViewOrCode()
+    const { viewWidth, codeView, deviceViewWidth, iframeViewWidth } = useViewOrCode()
     const iframe = ref('')
 
     const displayContent = () => {
@@ -42,6 +48,8 @@ export default {
       codeView,
       iframe,
       logShit,
+      deviceViewWidth,
+      iframeViewWidth,
     }
   }
 }
