@@ -5,15 +5,17 @@
         :class="[heroCenter]"
       >
         <div
-          class="flex flex-col mb-16 md:mb-0 items-center text-center"
+          class="flex flex-col mb-16 md:mb-0 items-center"
           :class="[heroCenterBody]"
         >
-          <h1 class="title-font text-center sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">
-            Before they sold out
-            readymade gluten
+          <h1
+            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white"
+            :class="[heroType !== 'center' ? 'max-w-md' : '']"
+          >
+            Before they sold out readymade gluten
           </h1>
           <p class="mb-8 leading-relaxed">
-            Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
+            Copper mug try-hard pitchfork pour-ovwqer freegan heirloom neutra air
             plant cold-pressed tacos poke beard tote bag. Heirloom echo park
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
             hexagon try-hard chambray.
@@ -31,8 +33,8 @@
           </div>
         </div>
         <div
-          class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"
-          :class="[imageFirst]"
+          class="md:w-1/2 w-5/6"
+          :class="[imageFirst, heroStype === 'center' ? 'lg:w-2/6' : 'lg:max-w-lg lg:w-full']"
         >
           <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
         </div>
@@ -69,8 +71,8 @@ export default {
     },
     heroCenterBody() {
       return this.heroType === 'center'
-        ? 'lg:w-2/3 w-full mt-10'
-        : 'lg:flex-grow md:w-1/2 md:text-left md:items-start'
+        ? 'lg:w-2/3 w-full mt-10 text-center'
+        : 'lg:flex-grow md:w-1/2 md:text-left items-center md:items-start'
     },
     imageFirst() {
       return this.heroType === 'image-first' ? '-order-1 lg:pr-24 md:pr-16 ' : 'lg:pl-24 md:pl-16 '
