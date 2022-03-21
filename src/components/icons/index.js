@@ -80,6 +80,12 @@ import TestimonialC from './testimonial/TestimonialC';
 
 export default function getIcons() {
   return {
+    Header: {
+      HeaderA: <HeaderA />,
+      HeaderB: <HeaderB />,
+      HeaderC: <HeaderC />,
+      HeaderD: <HeaderD />
+    },
     Blog: {
       BlogA: <BlogA />,
       BlogB: <BlogB />,
@@ -134,12 +140,6 @@ export default function getIcons() {
       GalleryA: <GalleryA />,
       GalleryB: <GalleryB />,
       GalleryC: <GalleryC />
-    }, 
-    Header: {
-      HeaderA: <HeaderA />,
-      HeaderB: <HeaderB />,
-      HeaderC: <HeaderC />,
-      HeaderD: <HeaderD />
     }, 
     Hero: {
       HeroA: <HeroA />,
