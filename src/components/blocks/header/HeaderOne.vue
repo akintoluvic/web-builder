@@ -90,6 +90,8 @@ export default {
           return 'md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400'
         case 'default':
           return 'md:ml-auto'
+        case '':
+          return 'md:ml-auto'
           
       
         default:
