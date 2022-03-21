@@ -45,6 +45,7 @@
 <script>
 import { useTheme } from "@/compossable/theme"
 import { useComponents } from "@/compossable/components"
+import { useViewOrCode } from "@/compossable/view-mode"
 import { ref } from 'vue'
 
 export default {
@@ -52,6 +53,7 @@ export default {
   setup() {
     const dragStartItem = ref(null)
     const { theme } = useTheme()
+    const { setViewType } = useViewOrCode()
     const { 
       iconList,
       blockListArr,
@@ -68,6 +70,7 @@ export default {
 
     const addSelectComponent = val => {
       addComponent(val)
+      setViewType('desktop')
     }
 
     const removeSelectComponent = val => {
