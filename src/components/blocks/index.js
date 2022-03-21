@@ -8,6 +8,8 @@ import ContactA from './contact/ContactA'
 
 import HeaderOne from "@/components/blocks/header/HeaderOne.vue"
 
+import HeroOne from "@/components/blocks/hero/HeroOne.vue"
+
 
 
 export default function getBlock() {
@@ -18,6 +20,9 @@ export default function getBlock() {
       BlogC: <BlogC />,
       BlogD: <BlogD />,
       BlogE: <BlogE />,
+    },
+    Hero: {
+      HeroA: <HeroOne />,
     },
     Contact: {
       ContactA: <ContactA />,

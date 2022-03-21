@@ -15,7 +15,7 @@
           <div class="flex justify-center">
             <button 
               class="inline-flex text-white bg-${props.theme}-500 border-0 py-2 px-6 focus:outline-none hover:bg-${props.theme}-600 rounded text-lg"
-              :class="[]"
+              :class="[theme.bgColor500, theme.hoverBgColor600]"
             >
               Button
             </button>
