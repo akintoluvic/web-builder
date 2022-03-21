@@ -26,7 +26,7 @@
           </a>
           <nav
             class="flex flex-wrap items-center text-base justify-center"
-            :class="[navOption === 'all-right' ? 'md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400' : 'md:ml-auto']"
+            :class="[allLeft]"
           >
             <a href class="mr-5 hover:text-gray-900 dark:hover:text-white">
               First Link
@@ -84,6 +84,28 @@ export default {
       return this.navOption === 'brand-middle'
         ? `${this.navBetween} order-1`
         : ''
+    },
+    allRight() {
+      return this.navOption === 'all-right'
+        ? 'md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400'
+        : ''
+    },
+    defaultNav() {
+      return this.navOption === 'default'
+        ? 'md:ml-auto'
+        : ''
+    },
+    allLeft() {
+      switch (this.navOption) {
+        case 'all-left':
+          return 'md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400'
+        case 'default':
+          return 'md:ml-auto'
+          
+      
+        default:
+          return ''
+      }
     },
   },
 }
