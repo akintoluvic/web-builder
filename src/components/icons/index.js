@@ -86,6 +86,14 @@ export default function getIcons() {
       HeaderC: <HeaderC />,
       HeaderD: <HeaderD />
     },
+    Hero: {
+      HeroA: <HeroA />,
+      HeroB: <HeroB />,
+      HeroC: <HeroC />,
+      HeroD: <HeroD />,
+      HeroE: <HeroE />,
+      HeroF: <HeroF />
+    },
     Blog: {
       BlogA: <BlogA />,
       BlogB: <BlogB />,
@@ -141,14 +149,6 @@ export default function getIcons() {
       GalleryB: <GalleryB />,
       GalleryC: <GalleryC />
     }, 
-    Hero: {
-      HeroA: <HeroA />,
-      HeroB: <HeroB />,
-      HeroC: <HeroC />,
-      HeroD: <HeroD />,
-      HeroE: <HeroE />,
-      HeroF: <HeroF />
-    },
     Pricing: {
       PricingA: <PricingA />,
       PricingB: <PricingB />
