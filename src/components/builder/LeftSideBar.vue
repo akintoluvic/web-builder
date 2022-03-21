@@ -35,7 +35,7 @@
         aria-labelledby="component icon button"
       >
         <component :is="icon" class="text-gray-400" />
-        <span v-if="!blockAvailable(type, index)" class="absolute inset-0 z-30 flex justify-center items-center text-xs bg-gray-200  bg-opacity-60 dark:bg-opacity-30 w-full h-full text-gray-900 dark:text-gray-300">
+        <span v-if="!blockAvailable(type, index)" class="absolute inset-0 z-10 flex justify-center items-center text-xs bg-gray-200  bg-opacity-60 dark:bg-opacity-30 w-full h-full text-gray-900 dark:text-gray-300">
           <span class="text-xs">Coming soon</span>
         </span>
       </div>
@@ -45,6 +45,7 @@
 <script>
 import { useTheme } from "@/compossable/theme"
 import { useComponents } from "@/compossable/components"
+import { useViewOrCode } from "@/compossable/view-mode"
 import { ref } from 'vue'
 
 export default {
@@ -52,6 +53,7 @@ export default {
   setup() {
     const dragStartItem = ref(null)
     const { theme } = useTheme()
+    const { setViewType } = useViewOrCode()
     const { 
       iconList,
       blockListArr,
@@ -68,10 +70,12 @@ export default {
 
     const addSelectComponent = val => {
       addComponent(val)
+      setViewType('desktop')
     }
 
     const removeSelectComponent = val => {
       removeComponent(val)
+      setViewType('desktop')
     }
 
     const handleDragStart = ( startElem, startIndex) => {

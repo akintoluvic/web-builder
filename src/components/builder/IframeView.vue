@@ -1,12 +1,18 @@
 <template>
-  <iframe 
+  <div 
+    class="overflow-y-scroll py-14 bg-slate-200 border-2 border-slate-300 mx-auto rounded-3xl"
+    :class="[deviceViewWidth, viewType === 'mobile' ? '' : 'h-full' ]" 
+  >
+    <iframe 
         ref="iframe"
-        class="h-full bg-white dark:bg-gray-900 mx-auto border-2 border-slate-200"
-        :class="[viewWidth, ]"
+        id="iframe"
+        class=" bg-white mx-auto dark:bg-gray-900 border-2 border-slate-300"
+        :class="[iframeViewWidth, viewType === 'mobile' ? 'mobile-height' : 'h-full']"
         title="Page components preview"
         loading="lazy"
         name="Page components preview"
       />
+  </div>
 </template>
 <script>
 import { useViewOrCode } from "@/compossable/view-mode"
@@ -19,7 +25,7 @@ export default {
   },
   setup(props) {
     const { code } = toRefs(props)
-    const { viewWidth, codeView, } = useViewOrCode()
+    const { viewWidth, codeView, deviceViewWidth, iframeViewWidth, viewType } = useViewOrCode()
     const iframe = ref('')
 
     const displayContent = () => {
@@ -29,12 +35,9 @@ export default {
 
     onMounted(() => {
       displayContent()
-      console.log('mounted')
     })
 
-    onUnmounted(() => {
-      console.log('destroyed')
-    })
+    onUnmounted(() => {})
 
     const logShit = () => {
       console.log('Hmmm, what iFrame doing here?')
@@ -45,7 +48,15 @@ export default {
       codeView,
       iframe,
       logShit,
+      deviceViewWidth,
+      iframeViewWidth,
+      viewType,
     }
   }
 }
 </script>
+<style>
+.mobile-height {
+  height: 812px;
+}
+</style>

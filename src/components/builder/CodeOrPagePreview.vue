@@ -1,10 +1,16 @@
 <template>
   <div class="flex-auto bg-white dark:bg-gray-900 h-screen overflow-y-scroll justify-center">
-    <div  class="w-full h-full text-gray-900 mt-20">
-      <div v-if="codeView" class="p-8">
-        <pre>{{ codeForView }}</pre>
+    <div class="w-full h-full text-gray-900 mt-20">
+      <div v-if="codeView" class="m-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500">
+        <div class="flex justify-center w-full h-12 bg-slate-300 dark:bg-slate-700 rounded-t-lg py-2">
+          <button
+            @click="copyToClipboard"
+            class="py-1 w-40 text-center rounded-full text-slate-200 bg-gray-600 hover:bg-gray-800 uppercase text-sm"
+          >{{ copyButtonText }}</button>
+        </div>
+        <pre class="w-full h-full p-4 overflow-y-scroll">{{ codeForView }}</pre>
       </div>
-      <main v-else-if="viewWidth === 'w-full'" class="hidde px-8 mb-12 min-h-screen">
+      <main v-else-if="deviceViewWidth === 'w-full'" class="px-8 mb-12 min-h-screen">
         <template v-for="(currentIcon, index) in selectedIcons" :key="index">
           <component :is="blocksList[currentIcon[1]][currentIcon[0]]"  />
         </template>
@@ -37,12 +43,13 @@ export default {
       selectedIcons,
     } = useComponents()
     const { darkMode } = useDarkMode()
-    const { viewWidth, codeView, } = useViewOrCode()
+    const { deviceViewWidth, codeView, } = useViewOrCode()
     const { theme } = useTheme()
 
     const codeBlock = ref('')
     const codeForView = ref('')
     const codeForPreview = ref('')
+    const copyButtonText = ref('Copy Code')
     
 
     const beautifyHTML = (codeStr) => {
@@ -92,6 +99,14 @@ export default {
       codeForView.value = beautifyHTML(codeBlock.value.innerHTML)
     }
 
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(codeForView.value)
+      copyButtonText.value = 'Code copied'
+      setTimeout(() => {
+        copyButtonText.value = 'Copy Code'
+      }, 1000)
+    }
+
     onMounted(() => {
       generateCodeForPreview()
     })
@@ -111,8 +126,10 @@ export default {
       codeForPreview,
       codeBlock,
       darkMode,
-      viewWidth,
+      deviceViewWidth,
       codeView,
+      copyToClipboard,
+      copyButtonText,
     }
   },
 }
