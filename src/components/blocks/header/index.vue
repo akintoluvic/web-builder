@@ -2,12 +2,11 @@
   <header class="text-gray-600 dark:text-gray-400 dark:bg-gray-900 body-font">
         <div 
           class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
-          :class="[navBetween]"
+          :class="[navBetween, brandMiddle === '-order-1' ? 'justify-between' : '']"
         >
           <a
             href
             class="flex title-font font-medium items-center text-gray-900 dark:text-white mb-4 md:mb-0"
-            :class="[brandMiddle]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +25,7 @@
           </a>
           <nav
             class="flex flex-wrap items-center text-base justify-center"
-            :class="[allLeft]"
+            :class="[allLeft, brandMiddle]"
           >
             <a href class="mr-5 hover:text-gray-900 dark:hover:text-white">
               First Link
@@ -82,17 +81,7 @@ export default {
     },
     brandMiddle() {
       return this.navOption === 'brand-middle'
-        ? `${this.navBetween} order-1`
-        : ''
-    },
-    allRight() {
-      return this.navOption === 'all-right'
-        ? 'md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400'
-        : ''
-    },
-    defaultNav() {
-      return this.navOption === 'default'
-        ? 'md:ml-auto'
+        ? '-order-1'
         : ''
     },
     allLeft() {
