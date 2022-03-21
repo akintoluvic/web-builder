@@ -23,12 +23,14 @@ export default function getBlock() {
     },
     Hero: {
       HeroA: <HeroOne />,
+      HeroB: <HeroOne heroType="center" />,
+      HeroC: <HeroOne heroType="image-first" />,
     },
     Contact: {
       ContactA: <ContactA />,
     },
     Header: {
-      HeaderA: <HeaderOne navOption="default" />,
+      HeaderA: <HeaderOne />,
       HeaderB: <HeaderOne navOption="all-left" />,
       HeaderC: <HeaderOne navOption="brand-middle" />,
       HeaderD: <HeaderOne navOption="space-between" />,
