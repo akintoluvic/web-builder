@@ -75,6 +75,7 @@ export default {
 
     const removeSelectComponent = val => {
       removeComponent(val)
+      setViewType('desktop')
     }
 
     const handleDragStart = ( startElem, startIndex) => {
