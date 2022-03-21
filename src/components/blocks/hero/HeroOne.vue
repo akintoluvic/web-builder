@@ -5,12 +5,11 @@
         :class="[heroCenter]"
       >
         <div
-          class="flex flex-col md:items-start mb-16 md:mb-0 items-center text-center"
+          class="flex flex-col mb-16 md:mb-0 items-center text-center"
           :class="[heroCenterBody]"
         >
-          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">
+          <h1 class="title-font text-center sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">
             Before they sold out
-            <br :class="[heroType === 'center' ? 'hidden text-center' : 'hidden lg:inline-block']" />
             readymade gluten
           </h1>
           <p class="mb-8 leading-relaxed">
@@ -33,7 +32,7 @@
         </div>
         <div
           class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"
-          :class="[orderCenter, imageFirst]"
+          :class="[imageFirst]"
         >
           <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
         </div>
@@ -66,15 +65,12 @@ export default {
       }
     },
     heroCenter() {
-      return this.heroType === 'center' ? 'flex-col justify-center' : 'md:flex-row'
+      return this.heroType === 'center' ? 'flex-col-reverse justify-center' : 'md:flex-row'
     },
     heroCenterBody() {
       return this.heroType === 'center'
-        ? 'lg:w-2/3 w-full mt-10 text-center'
-        : 'lg:flex-grow md:w-1/2 md:text-left'
-    },
-    orderCenter() {
-      return this.heroType === 'center' ? 'md:-order-last ' : ''
+        ? 'lg:w-2/3 w-full mt-10'
+        : 'lg:flex-grow md:w-1/2 md:text-left md:items-start'
     },
     imageFirst() {
       return this.heroType === 'image-first' ? '-order-1 lg:pr-24 md:pr-16 ' : 'lg:pl-24 md:pl-16 '
