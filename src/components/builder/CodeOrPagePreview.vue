@@ -16,6 +16,7 @@
         </template>
       </main>
       <IframeView v-else :code="codeForPreview" />
+      
     </div> 
     <main class="hidden px-8 my-12 min-h-screen" ref="codeBlock">
       <template v-for="(currentIcon, index) in selectedIcons" :key="index">
@@ -29,8 +30,8 @@ import { useComponents } from "@/compossable/components"
 import { useDarkMode } from "@/compossable/dark-mode"
 import { useTheme } from "@/compossable/theme"
 import { useViewOrCode } from "@/compossable/view-mode"
-import { ref, watch, onMounted } from "vue";
-import IframeView from "@/components/builder/IframeView";
+import { ref, watch, onMounted } from "vue"
+import IframeView from "@/components/builder/IframeView"
 
 export default {
   name: 'CodeOrPagePreview',

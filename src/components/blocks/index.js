@@ -1,10 +1,13 @@
-import BlogA from './blog/BlogA';
-import BlogB from './blog/BlogB';
-import BlogC from './blog/BlogC';
-import BlogD from './blog/BlogD';
-import BlogE from './blog/BlogE';
+import BlogA from './blog/BlogA'
+import BlogB from './blog/BlogB'
+import BlogC from './blog/BlogC'
+import BlogD from './blog/BlogD'
+import BlogE from './blog/BlogE'
 
-import ContactA from './contact/ContactA';
+import ContactA from './contact/ContactA'
+
+import HeaderOne from "@/components/blocks/header/HeaderOne.vue"
+
 
 
 export default function getBlock() {
@@ -18,6 +21,12 @@ export default function getBlock() {
     },
     Contact: {
       ContactA: <ContactA />,
+    },
+    Header: {
+      HeaderA: <HeaderOne navOption="default" />,
+      HeaderB: <HeaderOne navOption="all-left" />,
+      HeaderC: <HeaderOne navOption="brand-middle" />,
+      HeaderD: <HeaderOne navOption="space-between" />,
     },
   }
 }
