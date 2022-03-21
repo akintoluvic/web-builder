@@ -5,12 +5,12 @@
         :class="[heroCenter]"
       >
         <div
-          class="lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
+          class="lg:pr-24 md:pr-16 flex flex-col md:items-start mb-16 md:mb-0 items-center text-center"
           :class="[heroCenterBody]"
         >
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">
             Before they sold out
-            <br class="hidden lg:inline-block" />
+            <br :class="[heroType === 'center' ? 'hidden text-center' : 'hidden lg:inline-block']" />
             readymade gluten
           </h1>
           <p class="mb-8 leading-relaxed">
@@ -19,9 +19,9 @@
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
             hexagon try-hard chambray.
           </p>
-          <div class="flex justify-center">
+          <div class="flex justify-center items-center">
             <button 
-              class="inline-flex text-white bg-${props.theme}-500 border-0 py-2 px-6 focus:outline-none hover:bg-${props.theme}-600 rounded text-lg"
+              class="inline-flex text-white border-0 py-2 px-6 focus:outline-none rounded text-lg"
               :class="[theme.bgColor500, theme.hoverBgColor600]"
             >
               Button
@@ -31,7 +31,10 @@
             </button>
           </div>
         </div>
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <div
+          class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"
+          :class="[orderCenter]"
+        >
           <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
         </div>
       </div>
@@ -63,12 +66,15 @@ export default {
       }
     },
     heroCenter() {
-      return this.heroType === 'center' ? 'justify-center flex-col' : 'md:flex-row'
+      return this.heroType === 'center' ? 'flex-col justify-center' : 'md:flex-row'
     },
     heroCenterBody() {
       return this.heroType === 'center'
-        ? 'lg:w-2/3 w-full order-1 mt-10'
-        : 'lg:flex-grow md:w-1/2'
+        ? 'lg:w-2/3 w-full mt-10 text-center'
+        : 'lg:flex-grow md:w-1/2 md:text-left'
+    },
+    orderCenter() {
+      return this.heroType === 'center' ? 'md:-order-last ' : ''
     },
 
   },
