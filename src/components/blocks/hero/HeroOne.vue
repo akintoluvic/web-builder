@@ -5,7 +5,7 @@
         :class="[heroCenter]"
       >
         <div
-          class="lg:pr-24 md:pr-16 flex flex-col md:items-start mb-16 md:mb-0 items-center text-center"
+          class="flex flex-col md:items-start mb-16 md:mb-0 items-center text-center"
           :class="[heroCenterBody]"
         >
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-white">
@@ -33,7 +33,7 @@
         </div>
         <div
           class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"
-          :class="[orderCenter]"
+          :class="[orderCenter, imageFirst]"
         >
           <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
         </div>
@@ -75,6 +75,9 @@ export default {
     },
     orderCenter() {
       return this.heroType === 'center' ? 'md:-order-last ' : ''
+    },
+    imageFirst() {
+      return this.heroType === 'image-first' ? '-order-1 lg:pr-24 md:pr-16 ' : 'lg:pl-24 md:pl-16 '
     },
 
   },
