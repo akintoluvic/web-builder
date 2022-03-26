@@ -14,7 +14,7 @@
           >
             Before they sold out readymade gluten
           </h1>
-          <p class="mb-8 leading-relaxed">
+          <p class="mb-8 leading-relaxed max-w-2xl">
             Copper mug try-hard pitchfork pour-ovwqer freegan heirloom neutra air
             plant cold-pressed tacos poke beard tote bag. Heirloom echo park
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
