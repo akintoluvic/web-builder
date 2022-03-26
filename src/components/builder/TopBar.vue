@@ -72,10 +72,11 @@
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
+            className="css-i6dzq1"
             viewBox="0 0 24 24"
           >
-            <path d="M16 18L22 12 16 6"></path>
-            <path d="M8 6L2 12 8 18"></path>
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
           </svg>
           <svg
             v-else
@@ -85,16 +86,16 @@
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
-            className="css-i6dzq1"
             viewBox="0 0 24 24"
           >
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M16 18L22 12 16 6"></path>
+            <path d="M8 6L2 12 8 18"></path>
           </svg>
+          
           <span
             class="font-light uppercase ml-2"
             @click="toggleCodeView"
-          >{{ codeView ? 'Code view' : 'Preview'}}</span>
+          >{{ codeView ? 'Preview' : 'Code view'}}</span>
         </button>
         <div class="flex space-x-2 justify-between py-2 px-3 bg-slate-200 rounded-full">
           <button 

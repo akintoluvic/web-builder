@@ -116,6 +116,28 @@ export function useTheme() {
         }
       })
 
+      const hoverBgColor600 = computed(() => {
+        switch (theme.value) {
+          case 'red':
+            return 'hover:bg-red-600'
+          case 'orange':
+            return 'hover:bg-orange-600'
+          case 'green':
+            return 'hover:bg-green-600'
+          case 'yellow':
+            return 'hover:bg-yellow-600'
+          case 'blue':
+            return 'hover:bg-blue-600'
+          case 'purple':
+            return 'hover:bg-purple-600'
+          case 'pink':
+            return 'hover:bg-pink-600'
+            
+          default:
+            return `hover:bg-indigo-600`
+        }
+      })
+
       const focusBorderColor500 = computed(() => {
         switch (theme.value) {
           case 'red':
@@ -215,7 +237,9 @@ export function useTheme() {
     textColor, 
     textBgColor, 
     changeTheme, 
-    bgColor600, bgColor500, borderColor500, focusRingColor200, focusRingColor500, focusRingColor900,
+    bgColor600, bgColor500, borderColor500,
+    hoverBgColor600,
+    focusRingColor200, focusRingColor500, focusRingColor900,
     focusBorderColor500,
   }
 }
